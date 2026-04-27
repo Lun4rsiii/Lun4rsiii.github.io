@@ -89,7 +89,74 @@ main h1 {
   text-align: center;
   margin: 40px 0 24px;
 }
+/* ===================
+   Dark Mode Overrides
+   =================== */
 
+body.dark-mode {
+  background-color: #3E2723;
+  color: #EFEBE9;
+}
+
+body.dark-mode header {
+  background-color: #4E342E;
+}
+
+body.dark-mode nav a {
+  color: #EFEBE9;
+}
+
+body.dark-mode nav a:hover {
+  color: #FFB74D;
+}
+
+body.dark-mode h1,
+body.dark-mode h2 {
+  color: #BCAAA4;
+}
+
+body.dark-mode .faq-question {
+  background: #4E342E;
+  color: #EFEBE9;
+  border-color: #5D4037;
+}
+
+body.dark-mode .faq-question:hover {
+  background: #5D4037;
+}
+
+body.dark-mode .faq-answer {
+  background: #3E2723;
+  color: #EFEBE9;
+  border-color: #5D4037;
+}
+
+body.dark-mode .theme-toggle {
+  background: #BCAAA4;
+  color: #3E2723;
+}
+
+body.dark-mode .theme-toggle:hover {
+  background: #D7CCC8;
+}
+
+body.dark-mode footer {
+  background-color: #4E342E;
+}
+
+/* Theme toggle button styling */
+.theme-toggle {
+  background: #5D4037;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: #8D6E63;
+}
 /* ===================
    FAQ Section Layout
    =================== */
@@ -107,7 +174,7 @@ main h1 {
 /* Step 1: Style each FAQ item wrapper */
 .faq-item {
   margin-bottom: 10px;          /* Use 10px for space between items */
-  border: #D7CCC8;                 /* Use 1px solid #D7CCC8 */
+  border: 1px solid #D7CCC8;                 /* Use 1px solid #D7CCC8 */
   border-radius: 4px;          /* Use 4px for slightly rounded corners */
 }
 
@@ -115,7 +182,7 @@ main h1 {
 .faq-question {
   width: 100%;                  /* Use 100% to span full width */
   text-align: left;             /* Use "left" so text aligns left */
-  padding: 16x;                /* Use 16px */
+  padding: 16px;                /* Use 16px */
   font-size: 1.1rem;              /* Use 1.1rem */
   font-weight:bold;            /* Use "bold" */
   color: #3E2723;                  /* Use dark roast: #3E2723 */
@@ -126,14 +193,14 @@ main h1 {
 
 /* Step 3: Add hover effect for questions */
 .faq-question:hover {
-  background: D7CCC8;             /* Use warm gray: #D7CCC8 */
+  background: #D7CCC8;             /* Use warm gray: #D7CCC8 */
 }
 
 /* Step 4: Add focus state for keyboard users */
 /* This is important for accessibility! When someone uses Tab to
    navigate, they need to see which button is focused. */
 .faq-question:focus {
-  outline: #C65500;                /* Use 2px solid #C65500 (tropical orange outline) */
+  outline: 2px solid #C65500;                /* Use 2px solid #C65500 (tropical orange outline) */
   outline-offset: 2px;         /* Use 2px (adds space between outline and button */
 }
 
