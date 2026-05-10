@@ -1,0 +1,101 @@
+header {
+  display: flex;
+  flex-direction: column;           /* Use "column" to stack logo above nav */
+  align-items: center;              /* Use "center" to center everything */
+  background-color: floralwhite;
+  padding: 8px;
+  gap: 12px;                      /* Use 12px for space between logo and nav */
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: turquoise;
+}
+
+/* Nav: centered and wrapping on mobile */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;                /* Use "wrap" so links can wrap on tiny screens */
+  justify-content: center;          /* Use "center" to center the nav links */
+  gap: 8px;                      /* Use 8px for tighter spacing on mobile */
+  list-style: none;
+}
+
+nav a {
+  color: turquoise;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+
+nav a:hover {
+  color: paleturquoise;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+cursor: url(images/cursor-link.png), auto;
+}
+.hero {
+cursor: url(images/genshin_cursor.cur), auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;               /* Use 40vh (shorter on mobile) */
+
+  padding: 32px 16px;
+  text-align: center;
+ background-image: url(images/bg-2.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: 2rem;                /* Use 2rem (smaller on mobile) */
+  color: turquoise;
+  margin-bottom: 8px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+
+
+ {
+    cursor: url(images/genshin_cursor.cur), auto;
+}
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 8px;
+}
+    
+.div1 {
+    grid-column: span 5 / span 5;
+}
+
+.div2 {
+    grid-column: span 3 / span 3;
+    grid-row: span 6 / span 6;
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+.div3 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.div4 {
+    grid-column: span 5 / span 5;
+    grid-row-start: 8;
+}
+        
+
+}
