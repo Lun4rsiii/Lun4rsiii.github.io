@@ -1,0 +1,1386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0105)http://youtuberepeater.com/watch?v=AALrH26HAmw#gsc.tab=0&gsc.q=City%20of%20Winds%20and%20Idylls&gsc.sort= -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.3, maximum-scale=3.0, minimum-scale=0.85">
+
+
+<title>
+	City of Winds and Idylls - Disc 1: City of Winds and Idylls｜Genshin Impact - Repeat in a loop
+</title><meta name="description" content="Type &#39;repeater&#39; between &#39;youtube&#39; and &#39;.com&#39; and your video will automatically repeat/replay in a loop.  Use a mini player without menus or toolbars.  Check top repeated videos.">
+  <link rel="icon" href="http://youtuberepeater.com/favicon.gif" type="image/gif">
+  <link rel="icon" href="http://youtuberepeater.com/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://youtuberepeater.com/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="./homepage_files/main_styles.css">
+  <script async="" src="./homepage_files/async-ads.js.download"></script><script async="" src="./homepage_files/async-ads.js.download"></script><script type="text/javascript" id="www-widgetapi-script" src="./homepage_files/www-widgetapi.js.download" async=""></script><script src="./homepage_files/iframe_api"></script><script type="text/javascript" async="" src="./homepage_files/f.txt"></script><script language="JavaScript" type="text/javascript" src="./homepage_files/main_js.js.download"></script>
+  <!-- script language="JavaScript" type="text/javascript" src="//go.onclasrv.com/apu.php?zoneid=8790&element=txtSearch"></script -->
+  
+
+<script language="JavaScript" type="text/javascript" src="./homepage_files/player_js.js.download"></script>
+
+<script language="JavaScript" type="text/javascript">
+
+// divs, txts for dynamic html
+var content1 = null; // related videos will show here
+var txtStartEnd = null; // status 'repeating from 0:00 to 2:00'
+var txtStart = null; // start time textbox
+var txtEnd = null; // end time textbox
+var timeBox = null; // purple div surrounding all time buttons & txts
+var imgUpDn = null; // up/down arrow to open/close timeBox
+var videoBottomLink = null; // div with direct link
+var facebookLink = null; // facebook link
+var twitterLink = null; // twitter link
+
+// these vars are not url-encoded
+var sShareTitle   = 'City of Winds and Idylls - Disc 1: City of Winds and Idylls｜Genshin Impact';
+var sShareBaseURL = 'http://www.YoutubeRepeater.com/watch?v=AALrH26HAmw&name=City+of+Winds+and+Idylls+Disc+1+Genshin+Impact';
+
+// mini player & about open in separate windows
+//var mini_window  = null;
+var about_window = null;
+var youtube_window = null;
+var fb_window = null;
+var tw_window = null;
+var window_check = null;
+
+function openMiniPlayer()
+{ var wasplaying = getPlayerState();    
+if (getPlayerState() == 1) {   pause();  stop();  }
+   
+
+    var currentSec = parseInt(getCurrentTime()).toString();
+    if (currentSec < 12 && startSec == 0) currentSec = 0;
+    var currVol = getVolume();
+
+    // rewind back to starting position and stop
+   // seekTo(startSec);
+   // if (getPlayerState() != 1) {  stop();  }
+  
+    var sParams = "";
+    if (screen.width > 600 && screen.height > 400)
+    {
+        if (navigator.userAgent.indexOf('MSIE') > 0)
+        {
+            // IE
+            sParams = "left="+(screen.width-350)+",top="+(screen.height-387)+",";
+        }
+        else
+        {
+            // Firefox
+            sParams = "left="+(screen.width-330)+",top="+(screen.height-387)+",";
+        }
+    }
+          // 2018 added   ( directories=0,titlebar=0,location=0,status=0,menubar=0  are outdated )
+    mini_window = window.open("/PlayMiniVideo?t="+currentSec+"&s="+startSec+"&e="+endSec+"&vol="+currVol+"&v="+videoID, "MiniRepeater", sParams+"width=320,height=287,toolbar=0,scrollbars=0,status=0,resizable=1,directories=0,titlebar=0,location=0,status=0,menubar=0");
+    if (mini_window.opener == null) mini_window.opener = self;
+    if (wasplaying) mini_window.focus();
+    mini_window.focus();  
+    startWindowCheck();
+    
+    return false;
+}
+
+function openAboutMini() 
+{
+    about_window = window.open("/MiniPlayer", "AboutMiniPlayer", "width=1000,height=700,toolbar=0,scrollbars=1,status=0,resizable=1");
+    about_window.focus();
+    startWindowCheck();
+    return false;
+}
+function openYoutube(url)
+{
+    pause();
+    youtube_window = window.open(url, "YoutubeWindow", "menubar=1,toolbar=1,location=1,scrollbars=1,status=1,directories=1,resizable=1");
+    youtube_window.focus();
+    startWindowCheck();
+    return false;
+}
+function openFacebook()
+{
+    fb_window = window.open(facebookLink.href, "FacebookWindow", "menubar=1,toolbar=1,location=1,scrollbars=1,status=1,directories=1,resizable=1");
+    fb_window.focus();
+    return false;
+}
+function openTwitter()
+{
+    tw_window = window.open(twitterLink.href, "TwitterWindow", "menubar=1,toolbar=1,location=1,scrollbars=1,status=1,directories=1,resizable=1");
+    tw_window.focus();
+    return false;
+}
+
+
+function startWindowCheck()
+{
+    if (window_check == null) window_check = setInterval ("checkWindowClose()", 500);
+}
+function checkWindowClose()
+{
+    if (mini_window == null && about_window == null && youtube_window == null) 
+    {
+        clearInterval (window_check);
+        window_check = null;
+    }
+    else
+    {
+        if (mini_window != null)
+        {
+            if (mini_window.closed == true) 
+            {
+                self.focus();
+                mini_window = null;
+            }
+            else if (mini_window.ytplayer)
+            {
+                if (getPlayerState() == 1)
+                {
+                    // if miniplayer is playing - pause it
+                    if (mini_window.ytplayer.getPlayerState() == 1) mini_window.pause();
+                    // if this player is playing - copy volume from this player to mini player
+                    if (getVolume() != mini_window.getVolume()) 
+                    {
+                        if (mini_window.volume) mini_window.volume.setValue(getVolume());
+                        mini_window.setVolume(getVolume());
+                    }
+                }
+                else
+                {
+                    // if player is not playing - copy volume from mini player
+                    if (getVolume() != mini_window.getVolume() && mini_window.getVolume()) setVolume (mini_window.getVolume());
+                }                   
+            }
+        }
+        if (about_window != null && about_window.closed == true) 
+        {
+            self.focus();
+            about_window = null;
+        }
+        if (youtube_window != null && youtube_window.closed == true)
+        {
+            self.focus();
+            if (getPlayerState() != 1) seekTo(startSec);
+            youtube_window = null;
+        }
+    }
+}
+
+function doBookmark()
+{
+    if (window.sidebarX)
+    {
+        // Firefox
+        window.sidebar.addPanel (sShareTitle, sShareBaseURL, '');
+    }
+    else if (window.externalX)
+    {
+        // Internet Explorer
+        window.external.AddFavorite (sShareBaseURL, sShareTitle);
+    }
+    else
+    {
+        alert ("Cannot add bookmark.  Please, press Ctrl+D to add a bookmark.");
+    }
+    return false;
+}
+
+// toggle time box appearance
+function toggleTimeBox()
+{
+    clearHideTimeBox();
+
+    var h = parseInt(timeBox.style.height);
+    if (h == 30)
+    {
+        timeBox.style.height = '32px';
+        timeBox.style.borderWidth = '1px';
+        content1.style.height = '553px;';
+        imgUpDn.src = '/images/red_arrow_up_15x9.gif';
+         timeBox.style.opacity = '1';
+         timeBox.style.backgroundColor = 'rgba(255,244,217,1)';
+         if (looplink) {
+          looplink.style.backgroundColor = '#F7E7C7';
+          looplink.style.fontSize = '18px'; 
+          looplink.style.textDecoration = 'underline'; 
+}    }
+    else
+    {   timeBox.style.backgroundColor = 'transparent'
+        timeBox.style.borderWidth = '0px';
+        timeBox.style.height = '30px';
+        content1.style.height = '521px';
+         timeBox.style.opacity = '0.4';
+ if (looplink) {         
+         looplink.style.backgroundColor = 'unset';
+         looplink.style.fontSize = 'unset'; 
+                      looplink.style.textDecoration = 'unset'; }
+        imgUpDn.src = '/images/red_arrow_down_15x9.gif';
+    }
+  
+    return false; // so that '#' doesn't appear
+}
+// start/end times
+function btnStart()
+{
+    clearHideTimeBox();
+    txtStart.value = getCurrentTimeStr();
+}
+function btnEnd()
+{
+    clearHideTimeBox();
+    txtEnd.value = getCurrentTimeStr();
+}
+function btnOK()
+{
+    clearHideTimeBox();
+      timeBox.style.height = '30px';
+    var s1 = SecondsFromTime(txtStart.value);
+    var s2 = SecondsFromTime(txtEnd.value);
+    if (s1 < 0) s1 = 0;
+    if (s2 <= 0 || s2 > getDuration()) s2 = getDuration();
+    if (s2 < s1 + 5)
+    {
+        alert ('please specify start and end times with duration of at least 5 seconds');
+        return;
+    }
+  
+    startSec = s1;
+    endSec   = s2;
+
+    // if we are outside of our new time - seek to it
+    if (getCurrentTime() < startSec || getCurrentTime() > endSec) seekTo(startSec);
+  
+    // reset end to 0 if it's at the end
+    if (endSec >= getDuration()) endSec = 0;
+  
+    // set where we are repeating from and to
+    SetRepeatStartEndStatus ();
+  
+    // close the box
+    toggleTimeBox();
+  
+    // if we are not playing - start
+    if (getPlayerState() != 1) play();
+}
+function btnClear()
+{                  timeBox.style.height = '32px';
+    startSec = 0;
+    endSec   = 0;
+    SetRepeatStartEndStatus ();
+    toggleTimeBox();
+    if (getPlayerState() != 1) play();
+}
+// return # of total seconds from "MM:ss"
+function SecondsFromTime(s)
+{
+    var mm = 0;
+    var ss = 0;
+    var c = s.indexOf(':');
+    if(c >= 0) { ss = parseInt(s.substring(c+1), 10); mm = parseInt(s.substring(0, c), 10); }
+    else { ss = parseInt(s, 10); }
+    if(isNaN(mm)) mm = 0; if(isNaN(ss)) ss = 0;
+    return ss + mm*60;
+}
+// return either 'from start to end' or 'from 0:02 to 0:34'
+function FormatFromToDisplay ()
+{
+    var s = 'from ';
+    if (startSec <= 0) s += 'start';
+    else s += formatTimeStr(startSec);
+    s += ' to ';
+    if (endSec <= 0 || endSec >= getDuration()) s += 'end';
+    else s += formatTimeStr(endSec);
+    if (startSec >= 0 && endSec > startSec && endSec <= getDuration())
+    {
+        var repeat_sec = endSec - startSec;
+    //    s += ' ( ' + formatTimeStr(repeat_sec) + ' / ' + formatTimeStr(getDuration()) +' ) ';
+    }
+    return s;
+}
+function SetRepeatStartEndStatus()
+{
+    // start is always available
+    txtStart.value = formatTimeStr(startSec);
+  
+    // if player is not initialized, retry in 200ms
+    if (getDuration() < 1)
+    {
+        txtStartEnd.innerHTML = 'Loading Video...';
+        txtEnd.value = '--';
+        setTimeout('SetRepeatStartEndStatus()', 200);
+    }
+    else
+    {
+        // set status
+        txtStartEnd.innerHTML = 'Repeating ' + FormatFromToDisplay ();
+        // end time
+        if (endSec > 0 && endSec < getDuration())
+            txtEnd.value = formatTimeStr(endSec);
+        else txtEnd.value = 'end';
+    
+        // modify direct link
+        var share_url = '';   // complete url
+        var share_title = ''; // title
+        var share_body = '';  // body (was used for Digg, but not for facebook or twitter)
+        if (startSec > 0 || endSec > 0)
+        {
+            var se = '&s=' + startSec; // se will have both start & end
+            if (endSec > 0 && endSec < getDuration()) se += '&e=' + endSec;
+            var sURL = 'http://youtuberepeater.com/watch?v=' + videoID + se; // displayed link should not have extra naming params
+            videoBottomLink.innerHTML = '<a id="looplink" href="' + sURL + '">[Link to your loop ' + FormatFromToDisplay() + ']</a><br>  ' + sURL;
+            share_url   = sShareBaseURL + se;
+            share_title = sShareTitle + ' ' + FormatFromToDisplay();
+            share_body  = 'Repeat ' + share_title + ' in a loop';
+        }
+        else
+        {
+            videoBottomLink.innerHTML = '';
+            share_url   = sShareBaseURL;
+            share_title = 'Repeat ' + sShareTitle + ' in a loop';
+            share_body = share_title;
+        }
+        // encode
+        share_url   = encodeURIComponent(share_url);
+        share_title = encodeURIComponent(share_title);
+        share_body  = encodeURIComponent(share_body + " on YoutubeRepeater.  Type 'repeater' between 'youtube' and '.com' and your video will automatically repeat/replay in a loop.");
+        // facebook link (straightforward url + title)
+        facebookLink.href = 'http://www.facebook.com/share.php?u=' + share_url + '&t=' + share_title;
+        facebookLink.rel='nofollow';
+        // twitter link is short
+        var tu = 'http://www.YoutubeRepeater.com/watch?v='+videoID;
+        if (startSec > 0) tu += '&s=' + startSec;
+        if (endSec > 0 && endSec < getDuration()) tu += '&e=' + endSec;
+        twitterLink.href = 'http://twitter.com/home?status=' + share_title + encodeURIComponent(' '+tu);
+        twitterLink.rel='nofollow';
+    }
+}
+function checkTimeEnter(e)
+{
+    if (e.keyCode == 13) btnOK();
+}
+
+function loadRelated() 
+{
+    Request1();
+}
+function createHttpPostReq()    
+{
+    var req = null;
+    if (window.XMLHttpRequest) req = new XMLHttpRequest();
+    else if (window.ActiveXObject) req = new ActiveXObject("Microsoft.XMLHTTP");
+    if (req)
+    {
+        req.open('POST', '/LoadRelatedVideos', true);
+        req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    }
+    return req;
+}
+function Request1()
+{
+    var req1 = createHttpPostReq();
+    if (req1)
+    {
+        req1.onreadystatechange = function() 
+        {
+            if (req1.readyState == 4) 
+            {
+                content1.innerHTML = req1.responseText;
+            }
+        }
+        req1.send('video='+videoID);
+    }
+    else
+    {
+        content1.innerHTML = 
+            "This feature supports browsers with JavaScript and XMLHttpRequest support." +
+            "Please try Internet Explorer, Firefox, Opera or Google Chrome";
+    }
+}
+
+var delay_hide_timebox = null;
+function OnLoad()
+{
+    // related vids
+    content1 = document.getElementById ('_ctl0_Content_videoRelated1');
+    if (content1) setTimeout('loadRelated()', 100);
+
+    // time box    
+    timeBox = document.getElementById('_ctl0_Content_timeBox');
+    imgUpDn = document.getElementById('imgUpDn');
+    // time texts
+    txtStartEnd = document.getElementById('txtStartEnd');
+    txtStart = document.getElementById('txtStart');
+    txtEnd = document.getElementById('txtEnd');
+    
+    // bottom link
+    videoBottomLink = document.getElementById ('videoBottomLink');
+    facebookLink = document.getElementById ('facebookLink');
+    twitterLink  = document.getElementById ('twitterLink');
+}
+function delayHideTimeBox()
+{
+    toggleTimeBox ();
+}
+function clearHideTimeBox()
+{
+    clearTimeout(delay_hide_timebox);
+}
+      
+</script>
+<script src="./homepage_files/cse_element__en.js.download" type="text/javascript"></script><link type="text/css" href="./homepage_files/default_v6+en.css" rel="stylesheet"><link type="text/css" href="./homepage_files/default.css" rel="stylesheet"><style type="text/css">.gsc-control-cse{font-family:trebuchet ms, arial, sans-serif}.gsc-control-cse .gsc-table-result{font-family:trebuchet ms, arial, sans-serif}.gsc-refinementsGradient{background:linear-gradient(to left,rgba(255,255,255,1),rgba(255,255,255,0))}.gsc-control-cse{border-color:#FFFFFF;background-color:#FFFFFF}.gsc-results-wrapper-overlay{background-color:#FFFFFF}input.gsc-input,.gsc-input-box,.gsc-input-box-hover,.gsc-input-box-focus{border-color:#6FA8DC}.gsc-search-button-v2,.gsc-search-button-v2:hover,.gsc-search-button-v2:focus{border-color:#2F5BB7;background-color:#6FA8DC;background-image:none;filter:none}.gsc-search-button-v2 svg{fill:#FFFFFF}.gsc-tabHeader.gsc-tabhActive,.gsc-refinementHeader.gsc-refinementhActive{color:#1A0DAB;border-color:#1A0DAB;background-color:#FFFFFF}.gsc-tabHeader.gsc-tabhInactive,.gsc-refinementHeader.gsc-refinementhInactive{color:#999999;border-color:#999999;background-color:#FFFFFF}.gsc-webResult.gsc-result,.gsc-results .gsc-imageResult{border-color:#FFFFFF;background-color:#F3F3F3}.gsc-webResult.gsc-result:hover{border-color:#FFEABB;background-color:#F3F3F3}.gs-webResult.gs-result a.gs-title:link,.gs-webResult.gs-result a.gs-title:link b,.gs-imageResult a.gs-title:link,.gs-imageResult a.gs-title:link b{color:#1A0DAB}.gs-webResult.gs-result a.gs-title:visited,.gs-webResult.gs-result a.gs-title:visited b,.gs-imageResult a.gs-title:visited,.gs-imageResult a.gs-title:visited b{color:#674EA7}.gs-webResult.gs-result a.gs-title:hover,.gs-webResult.gs-result a.gs-title:hover b,.gs-imageResult a.gs-title:hover,.gs-imageResult a.gs-title:hover b{color:#0000FF}.gs-webResult.gs-result a.gs-title:active,.gs-webResult.gs-result a.gs-title:active b,.gs-imageResult a.gs-title:active,.gs-imageResult a.gs-title:active b{color:#1A0DAB}.gsc-cursor-page{color:#1A0DAB}a.gsc-trailing-more-results:link{color:#1A0DAB}.gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet,.gs-fileFormatType{color:#999999}.gs-webResult div.gs-visibleUrl{color:#F3F3F3}.gs-webResult div.gs-visibleUrl-short{color:#F3F3F3}.gs-webResult div.gs-visibleUrl-short{display:block}.gs-webResult div.gs-visibleUrl-long{display:none}.gs-webResult div.gs-visibleUrl-breadcrumb{display:none}.gs-promotion div.gs-visibleUrl-short{display:none}.gs-promotion div.gs-visibleUrl-long{display:block}.gs-promotion div.gs-visibleUrl-breadcrumb{display:none}.gsc-cursor-box{border-color:#FFFFFF}.gsc-results .gsc-cursor-box .gsc-cursor-page{border-color:#999999;background-color:#FFFFFF;color:#999999}.gsc-results .gsc-cursor-box .gsc-cursor-current-page{border-color:#1A0DAB;background-color:#FFFFFF;color:#1A0DAB}.gsc-webResult.gsc-result.gsc-promotion{border-color:#F6F6F6;background-color:#F6F6F6}.gsc-completion-container{border-color:#6FA8DC}.gsc-completion-title{color:#1A0DAB}.gsc-completion-snippet{color:#999999}.gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link{color:#1A0DAB}.gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited{color:#1A0DAB}.gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover{color:#1A0DAB}.gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active{color:#1A0DAB}.gs-promotion .gs-snippet,.gs-promotion .gs-title .gs-promotion-title-right,.gs-promotion .gs-title .gs-promotion-title-right *{color:#4D5156}.gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short{color:#202124}.gcsc-find-more-on-google{color:#1A0DAB}.gcsc-find-more-on-google-magnifier{fill:#1A0DAB}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-webkit-user-select:none;white-space:nowrap}.gsst_e{vertical-align:middle;opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em;-webkit-appearance:button}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gssb_a{padding:8px 16px}.gsib_a{padding:4px 10px 4px 56px}.gscb_a{line-height:27px}.gssb_e{border:0}.gssb_l{margin:5px 0}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:-ms-input-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}input.gsc-input:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}.gssb_a,.gssb_a td{line-height:24px}</style><style>   #logo { height:74px !important; margin-top: 22px}  
+    #player, video, .videoPlayer      
+      
+       {object-fit:contain !important; max-width: 
+       min(100vw,1280px) !important; max-height:56.25vw !important;
+       top:-60px;}
+          .gsc-input-box  {background-color: rgba(230,230,230,1) !important; height: 45px !important; position:fixed; opacity:1 !important;
+             left:39px; top: -14px; max-width:98vw !important;}                 
+      .gsc-results-wrapper-overlay,
+      .gsc-results-wrapper-visible , .gsc-webResult,  .gsc-result {    max-width: min(500px, 626px) !important; 
+        left: 8px !important;     
+        top: min(calc(56.25vw + 95px), calc(23px + 513px)) !important;
+      //  transform: scale(1); 
+       transform-origin: top left;  
+        object-fit:contain !important;      } 
+        .gs-image {padding-left: -15px;}
+ 
+            .gsc-webResult *,  .gsc-result  * {padding:-5px !important}    
+
+      
+    </style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-webkit-user-select:none;white-space:nowrap}.gsst_e{vertical-align:middle;opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em;-webkit-appearance:button}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gssb_a{padding:8px 16px}.gsib_a{padding:4px 10px 4px 56px}.gscb_a{line-height:27px}.gssb_e{border:0}.gssb_l{margin:5px 0}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:-ms-input-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}input.gsc-input:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}.gssb_a,.gssb_a td{line-height:24px}</style><style>
+      .gsc-results-wrapper-overlay,
+      .gsc-results-wrapper-visible {
+        left: 798.8333435058594px !important; top: 86px !important; }     
+    </style></head>
+<body class="gsc-overflow-hidden dim"> 
+<div id="container">
+<div id="Div1" classx="menu_search" style="font-size:10px; align:left; position:absolute;color:#777; z-index:1000994;left:608px; width:382px; top:1px;text-align:right;opacity:1">
+<!-- <input style="top:-1px; left:77px;" type="text" id="txtSearch" onkeypress="checkEnter(event)" class="menu_search_txt" value=""  v="">
+     --> <a href="http://youtuberepeater.com/SearchYouTubeVideos"><img id="btnSearch" alt="Search YouTube" onclick="return doSearch()" style="margin-left:75px;top:-9px; opacity:0.40;" title="&#39;Search Youtube&#39; sometimes is denied (API rate limits) 
+   - The new search equals Google site:youtube.com" class="menu_search_btn" src="./homepage_files/search_youtube_104x25.gif"></a>  
+                     <br>   <br>
+ 
+
+</div>
+            
+ <div id="header_row">              
+ 
+      <a href="http://www.youtuberepeater.com/">
+      <picture>
+  <source srcset="/images/logo-d.gif
+  " media="(prefers-color-scheme: dark)">
+  <img id="logo" src="./homepage_files/logo_270x90.gif" alt="YoutubeRepeater Logo" height="81">
+</picture>    </a>
+ 
+    <div id="banner">
+      <div id="banner_550x80x1">
+      
+      <div id="banner_550x80x2">
+    
+
+<div style="color:#aaa; line-height:16px; font-size:14px; text-align:left; margin-left:-41px">
+<font color="#abc">Thank you for the years! <font color="#79b"> </font> <font size="1"> 
+<font style="font-size:11px;" color="#abc"> Will you be interested in our statistics? <br> (Top 50,000 most-repeated / 'earworms')  
+ <br> Let's <a style="color:#08a" rel="â€œnofollowâ€" href="https://discord.gg/UcfNmdg">chat</a> about repeating, the Web or Charity?   </font>  
+    <br> <br>  &nbsp; &nbsp; &nbsp; &nbsp;      </font>
+
+<!-- Sorry many Youtube Apps faced limitations in 2019<br /> 
+ <a style="color:Teal" href="https://forms.gle/f8nYfMAnqSC7EW1X9">Vote here</a> for new features.<br>  
+  <div style="color:#789; font-size:16px;width:670px; text-align:left">
+  We made YoutubeRepeater failproof again for all years to come.<a href="https://www.youtuberepeater.com/TopRepeaters">Top videos</a>
+ 
+</div>
+ <div style="color:#876; font-size:19px;width:590px; text-align:left">&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Thank you so much for your loyalty! 
+ 	&nbsp;&#127881; &#127881;  </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  Proud so many of you stayed. &nbsp; &nbsp;  &nbsp;  &nbsp; 	   
+   -->                     
+                   
+                            <!--     <div style="color:#aaa; font-size:20px;width:590px; text-align:left"> Repeating works perfect <font color="#999">Thank you for your loyalty!&nbsp; &nbsp;  </font>
+ <div style="color:#ccc; width:590px; text-align:left"> &nbsp; &nbsp; &nbsp; &nbsp; Top-Lists, Loops, Search will be back later. 
+<br >  + We prepare new features finally! :)  &nbsp;- &nbsp; <a href="https://forms.gle/f8nYfMAnqSC7EW1X9"> let us notify you</a><br>    </div></div>  -->
+
+</font></div><font color="#abc">
+        
+        
+        
+      </font></div><font color="#abc">
+      </font></div><font color="#abc">
+    </font></div><font color="#abc">
+  </font></div><font color="#abc">
+      
+  <div id="_ctl0_menu_row" class="menu_row">
+  <center>
+  <table id="_ctl0_MenuTable" cellspacing="0" cellpadding="0" border="0" style="border-width:0px;width:100%;border-collapse:collapse;">
+	<tbody><tr>
+		<td class="menu_item"><a href="http://youtuberepeater.com/">Repeat YouTube</a></td><td class="menu_item"><a href="http://youtuberepeater.com/TopRepeaters">Recently Repeated</a></td><td class="menu_item"><a href="http://youtuberepeater.com/YouTubeRepeat-MiniPlayer">   </a></td><td class="menu_item"><a href="http://youtuberepeater.com/ContactUs">About</a></td><td class="menu_item" align="right" style="width:580px;">        
+      <div id="searchDiv" class="menu_search" style="top:-61px; left:100px; z-index: 8000000;width: 560px !important; opacity:1"> 
+                           <script>
+			(function() {
+				var gcse = document.createElement('script');
+			    gcse.type = 'text/javascript';
+			    gcse.async = true;
+			    gcse.src = 'https://cse.google.com/cse.js?cx=000233056048401308543:j6krij_cxjg';
+
+			    var s = document.getElementsByTagName('script')[0];
+			    s.parentNode.insertBefore(gcse, s);
+			})();
+                                 
+				/*  Google Search */
+
+			// "youtube.com" => "youtuberepeater.com"
+			setInterval(function() {
+				var results = document.querySelectorAll('.gsc-results-wrapper-overlay *');
+                var spellings = document.querySelectorAll('.gs-spelling *');
+                
+				for (var i = 0, l = results.length; i < l; i++) {
+					var result = results[i];
+
+					// Replace in "href"
+					if (/^.*\.youtube.com/.test(result.href)) {
+						result.href = result.href.replace(/^.*\.youtube.com/g, 'http://youtuberepeater.com');
+						     for (const node of result.childNodes) {
+  if (node.nodeType === Node.TEXT_NODE) {
+    node.nodeValue = node.nodeValue.replace(/ - YouTube/g, '');
+  }
+}
+					}
+
+					// Replace in "data-*"
+					for (var d in result.dataset) {
+						if (/^.*\.youtube.com/.test(result.dataset[d])) {
+							result.dataset[d] = result.dataset[d].replace(/^.*\.youtube.com/g, 'http://youtuberepeater.com');
+
+							if (d == 'cturl' && /(gs\-image)/.test(result.className)) {
+								result.dataset[d] = result.href;
+							}
+						}
+					}
+
+					// Replace in "innerText" (if have no children)
+					if (result.children.length == 0 && /^.*\.youtube.com/.test(result.innerText)) {
+						result.innerText = result.innerText.replace(/^.*\.youtube.com/g, 'http://youtuberepeater.com');
+						     
+					}
+
+					// Open links in same tab via removing "target" attribute
+					/*if (result.target == '_blank') {
+						result.removeAttribute('target');
+					}*/
+
+					// Open links in same tab via "onclick"
+					if (/gs\-title/.test(result.className) && result.href) {
+						result.addEventListener('click', function(event) {
+							event.preventDefault();
+							event.stopPropagation();
+
+							window.open(this.href, '_self');
+
+							return false;
+						});
+					}
+				}
+				for (var i = 0, l = spellings.length; i < l; i++) {
+				  var spelling = spellings[i];
+				spelling.innerText = spelling.innerText.replace(/..vevo..*SME.../g, ' ');}   
+			}, 500);
+
+
+
+
+		</script>
+		        <script>
+		     window.addEventListener('load', function () {
+    setTimeout(function () {
+        // Skip if URL already has a search query
+
+
+        var relatedDiv = document.getElementById('_ctl0_Content_videoRelated1');
+        if (!relatedDiv) return;
+        if (!relatedDiv.querySelector('font[color="lightgrey"]')) return;
+
+        var titleElement = document.querySelector('.videoTitle h1');
+        if (!titleElement) return;
+
+        var rawTitle = titleElement.innerText || titleElement.textContent;
+        rawTitle = rawTitle.replace(/\.[^/.]+$/, '');
+        rawTitle = rawTitle.replace(/[-\/().,:+&#Â§|*Â´`_<>"'\[\]]/g, ' ').replace(/\s+/g, ' ').trim();      //.replace(/[^\w\s]/g, '')
+        var words = rawTitle.split(' ').slice(0, 5);
+        var searchQuery = words.join(' ');
+        if (!searchQuery) return;
+
+        relatedDiv.innerHTML = '';
+  
+
+        var checkInterval = setInterval(function () {
+            if (window.google && google.search && google.search.cse && google.search.cse.element) {
+                clearInterval(checkInterval);
+
+                google.search.cse.element.render({
+                    div: '_ctl0_Content_videoRelated1',
+                    tag: 'searchresults-only'
+                });
+
+                var element = google.search.cse.element.getElement('searchresults-only0');
+                      if (element  ) {                   // && !urlParams.get('gsc.q')
+    document.getElementById('gsc-i-id1').placeholder = searchQuery;
+           var urlParams = new URLSearchParams(window.location.search);
+           if (urlParams.get('gsc.q')) return;
+    element.execute(searchQuery);
+}
+            }
+        }, 55);
+
+    }, 55);
+});
+</script>
+		
+		<div id="___gcse_0" dir="ltr" style="position: relative;"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><table cellspacing="0" cellpadding="0" role="presentation" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" role="presentation" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" aria-label="search" id="gsc-i-id1" dir="ltr" spellcheck="false" style="width: 100%; padding: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; margin: 0px; height: auto; outline: none;" placeholder="City of Winds and Idylls"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" title="Clear search box" role="button" style="display: none;"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></form><div id="beforeTag" title="(Can avoid AI Videos)   (some of us search old music)">before:2024</div></div>
+		
+     <!-- <input type="text" id="txtSearch" onkeypress="checkEnter(event)" class="menu_search_txt" value=""  x="               (temporarily off)" v="">
+      <a href="SearchYouTubeVideos"><img id="btnSearch" alt="Search YouTube" onclick="return doSearch()" 
+         class="menu_search_btn" src="/images/search_youtube_104x25.gif" /></a>  -->     
+      </div>
+    </td>
+	</tr>
+</tbody></table>
+  </center>
+  </div>
+  
+  
+
+  <div id="content_row">
+  
+    
+  
+  <div id="_ctl0_Content_videoTop1" class="videoTop"><div class="videoTitle"><h1 style="font-size: 14px; line-height: 20px;">City of Winds and Idylls - Disc 1: City of Winds and Idylls｜Genshin Impact</h1></div><div class="videoYTLink"><a class="icon youtube" onclick="return openYoutube(&#39;http://www.youtube.com/watch?v=AALrH26HAmw&#39;)" href="http://www.youtube.com/watch?v=AALrH26HAmw">YouTube</a></div></div>
+  <div id="_ctl0_Content_videoPlayer1" class="videoPlayer">
+    
+    <!-- Youtube API player 2016 -->
+    <iframe id="player" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="City of Winds and Idylls - Disc 1: City of Winds and Idylls｜Genshin Impact" width="640" height="360" src="./homepage_files/AALrH26HAmw.html"></iframe>
+    
+    <script language="JavaScript" type="text/javascript">
+
+        // video params
+        videoID = "AALrH26HAmw";
+        startSec = 0;
+        endSec = 0;
+        repeat_mini = 0;
+        repeat_url = '/VideoRepeated';
+
+        // load player API javascript
+        var tag = document.createElement('script');
+        tag.src = "//www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // init function
+        function onYouTubeIframeAPIReady() 
+        {
+            // alert("onYouTubeIframeAPIReady");
+
+            // ytplayer from player_js
+            var p = new YT.Player('player',
+            {
+              width: '640',
+              height: '360',
+              videoId: videoID,
+              playerVars: { 'autoplay': 1, 'loop': 1, 'controls': 2, 'showinfo': 0, 'start': startSec, 'iv_load_policy': 3 },
+              events: {
+                  onReady: onPlayerReady,
+                  onStateChange: onPlayerStateChange,
+                  onError: onPlayerError
+              }
+            });
+
+            // set repeat status
+            SetRepeatStartEndStatus();
+
+            // hide time box in 10 sec
+            delay_hide_timebox = setTimeout('delayHideTimeBox()', 10000);
+            
+   
+
+
+let spaceHeld = false;
+let spaceTimer = null;
+let spaceIsHold = false;
+
+document.addEventListener("keydown", e => {
+  if (!p) return;
+
+  if (e.code === "Space") {
+    //e.preventDefault();
+
+    if (!spaceHeld) {
+      spaceHeld = true;
+      spaceIsHold = false;
+      spaceTimer = setTimeout(() => {
+        spaceIsHold = true;
+        p.setPlaybackRate(2);
+      }, 250);
+
+      return;
+    }
+  }
+   var STEP = 10;   var  v;   var speed;
+  const isArrow = e.key.startsWith("Arrow");
+  if (!isArrow) return;
+     STEP = 10;
+  const VOL_STEP = 10;
+         v = p.getVolume();
+          speed = p.getPlaybackRate();
+  if (p.getPlayerState() !== YT.PlayerState.PLAYING) 
+  {   STEP = 1/22;     }       
+
+  if (e.key === "ArrowRight") {
+  
+/*  if (spaceIsHold) {
+   speed = Math.min(speed + 1, 8);
+  p.setPlaybackRate(speed);
+if (speed < -1 || speed > 2.8 )  {
+if ( v != 0) { p.setVolume(0) ; var vprev = v;  }  
+} else { if (v == 0 && vprev) {p.setVolume(vprev) }} 
+
+}  else  {                                         */
+    p.seekTo(p.getCurrentTime() + STEP, true);  // }
+
+  }
+
+  if (e.key === "ArrowLeft") {
+    p.seekTo(p.getCurrentTime() - STEP, true);
+  }
+
+  if (e.key === "ArrowUp") {
+    v = p.getVolume();
+    p.setVolume(Math.min(100, v + VOL_STEP));
+  }
+
+  if (e.key === "ArrowDown") {
+    v = p.getVolume();
+    p.setVolume(Math.max(0, v - VOL_STEP));
+  }
+});
+
+document.addEventListener("keyup", e => {
+  if (!p) return;
+
+  if (e.code === "Space") {
+    clearTimeout(spaceTimer);
+
+    if (!spaceIsHold) {
+      const state = p.getPlayerState();
+      if (state === YT.PlayerState.PLAYING) p.pauseVideo();
+      else p.playVideo();
+    }
+
+    spaceHeld = false;
+    spaceIsHold = false;
+    p.setPlaybackRate(1);
+  }
+});
+         
+            
+            
+        }
+
+    </script>
+
+  </div>
+  <div id="_ctl0_Content_videoInfo1" class="videoInfo">
+    <div id="_ctl0_Content_videoStars1" class="videoStars"><img alt="5.00" width="15" height="15" src="./homepage_files/star15_red.gif"><img alt="5.00" width="15" height="15" src="./homepage_files/star15_red.gif"><img alt="5.00" width="15" height="15" src="./homepage_files/star15_red.gif"><img alt="5.00" width="15" height="15" src="./homepage_files/star15_red.gif"><img alt="5.00" width="15" height="15" src="./homepage_files/star15_red.gif"></div>
+    
+    <div id="_ctl0_Content_videoStartEnd1" class="videoStartEnd">
+      <a href="http://youtuberepeater.com/watch?v=AALrH26HAmw#" onclick="return toggleTimeBox()"><span id="txtStartEnd">Repeating from start to end</span></a>
+      <a href="http://youtuberepeater.com/watch?v=AALrH26HAmw#" onclick="return toggleTimeBox()"><img id="imgUpDn" src="./homepage_files/red_arrow_up_15x9.gif"></a>
+    </div>    <div id="_ctl0_Content_videoRatings1" class="videoRatings">51,253 likes</div>
+    <div id="_ctl0_Content_videoViews1" class="videoViews"><b>2,111,286</b> views</div>
+  </div>
+  
+  <div id="_ctl0_Content_timeBox" class="videoTimeBox" onmouseover="clearHideTimeBox()" style="background-color: transparent; border-width: 0px; height: 30px; opacity: 0.4;">
+    <div class="videoTimeStart">
+      <table border="0" cellpadding="0" cellspacing="0">
+      <tbody><tr>
+        <td valign="middle">Start at <input type="text" id="txtStart" onfocus="clearHideTimeBox()" onkeypress="checkTimeEnter(event)" class="videoTimeTxt" value="0:00"></td> 
+        <td valign="middle"><img onclick="btnStart()" alt="set current time" class="videoTimeBtn" src="./homepage_files/btn_time_markpos_96x20.gif"></td> 
+      </tr>
+      </tbody></table>
+    </div>  
+    <div class="videoTimeEnd">
+      <table border="0" cellpadding="0" cellspacing="0">
+      <tbody><tr>
+        <td valign="middle">End at <input type="text" id="txtEnd" onfocus="clearHideTimeBox()" onkeypress="checkTimeEnter(event)" class="videoTimeTxt" value="0:00"></td> 
+        <td valign="middle"><img onclick="btnEnd()" alt="set current time" class="videoTimeBtn" src="./homepage_files/btn_time_markpos_96x20.gif"></td> 
+      </tr>
+      </tbody></table>
+    </div>
+    <div class="videoTimeClose">
+      <img onclick="btnOK()" alt="ok" class="videoTimeBtn" src="./homepage_files/btn_time_ok_34x20.gif">
+      <img onclick="btnClear()" alt="clear" class="videoTimeBtn" src="./homepage_files/btn_time_clear_45x20.gif">
+    </div>      <br>
+  </div>      <div class="videoBottomLink" id="videoBottomLink"></div>
+  
+  <div id="_ctl0_Content_videoBottom1" class="videoBottom">
+    <div class="videoMiniImage">
+      <a href="http://youtuberepeater.com/LaunchMiniPlayer" onclick="return openMiniPlayer()"><img style="opacity:0.5" width="183" height="133" alt="Open Mini Window" src="./homepage_files/launch_mini_player2.gif"></a>
+      <div class="videoMiniFill1">
+        <div class="videoMiniFill2">
+          <a href="http://youtuberepeater.com/LaunchMiniPlayer" onclick="return openMiniPlayer()"><img width="171" alt="Launch Mini Player" src="./homepage_files/default(1).jpg"></a>
+        </div>
+      </div>
+    </div>
+    <div class="videoSocial">
+      
+      <div style="position:relative;">
+      <ul class="linkBar">
+        <li><a class="icon facebook" id="facebookLink" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fwww.YoutubeRepeater.com%2Fwatch%3Fv%3DAALrH26HAmw%26name%3DCity%2Bof%2BWinds%2Band%2BIdylls%2BDisc%2B1%2BGenshin%2BImpact&amp;t=Repeat%20City%20of%20Winds%20and%20Idylls%20-%20Disc%201%3A%20City%20of%20Winds%20and%20Idylls%EF%BD%9CGenshin%20Impact%20in%20a%20loop" target="_blank" onclick="return openFacebook()" rel="nofollow">Share</a></li>
+      </ul>
+      <ul class="linkBar">
+        <li><a class="icon twitter" id="twitterLink" href="http://twitter.com/home?status=Repeat%20City%20of%20Winds%20and%20Idylls%20-%20Disc%201%3A%20City%20of%20Winds%20and%20Idylls%EF%BD%9CGenshin%20Impact%20in%20a%20loop%20http%3A%2F%2Fwww.YoutubeRepeater.com%2Fwatch%3Fv%3DAALrH26HAmw" target="_blank" onclick="return openTwitter()" rel="nofollow">Tweet</a></li>
+      </ul>
+      <ul class="linkBar">        
+        <li><a class="icon favorite" href="http://youtuberepeater.com/Bookmark" target="_blank" onclick="return doBookmark()"></a></li>
+      </ul>
+      </div>
+      
+    </div>
+    <div class="videoBold">                <br><br>
+      <a href="http://youtuberepeater.com/LaunchMiniPlayer" onclick="return openMiniPlayer()">Open Mini Window</a>
+    </div>
+    <p align="justify" style="font-weight:normal;">
+      Repeat this video 
+      in a tiny player
+      <!-- The Mini Player will repeat your video in a window
+      without menu or toolbars.  It has smaller playback 
+      controls and can be sized and moved anywhere you want.  -->
+      <a onclick="return openAboutMini()" target="_blank" href="http://youtuberepeater.com/MiniPlayer">...</a>
+    </p>
+  </div>
+      
+  
+  <div id="_ctl0_Content_videoRelatedHead1" class="videoRelatedHead">
+    <h1 style="font-size: 14px; line-height: 20px;opacity:0;">Related Videos</h1>
+  </div>
+  <div id="_ctl0_Content_videoRelated1" class="videoRelated" style="height: 521px;"><div id="___gcse_2"><div class="gsc-control-cse gsc-control-cse-en"><div class="gsc-control-wrapper-cse" dir="ltr" style="visibility: visible;"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8" style="display: none;"><table cellspacing="0" cellpadding="0" role="presentation" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id2"><table cellspacing="0" cellpadding="0" role="presentation" id="gs_id51" class="gstl_51 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti51" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" aria-label="search" id="gsc-i-id2" dir="ltr" spellcheck="false" style="width: 100%; padding: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; margin: 0px; height: auto; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st51" dir="ltr"><a class="gsst_a" href="javascript:void(0)" title="Clear search box" role="button" style=""><span class="gscb_a" id="gs_cb51" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></form><div class="gsc-results-wrapper-overlay gsc-results-wrapper-visible"><div class="gsc-results-close-btn gsc-results-close-btn-visible" tabindex="0"></div><div class="gsc-positioningWrapper"><div class="gsc-tabsAreaInvisible"><div aria-label="refinement" role="tab" class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Custom Search</div><span class="gs-spacer"> </span></div></div><div class="gsc-positioningWrapper"><div class="gsc-refinementsAreaInvisible"></div></div><div class="gsc-above-wrapper-area"><div class="gsc-above-wrapper-area-backfill-container"></div><table cellspacing="0" cellpadding="0" role="presentation" class="gsc-above-wrapper-area-container"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info" id="resInfo-1">About 5,790 results (0.27 seconds)</div></td><td class="gsc-orderby-container"><div class="gsc-orderby"><div class="gsc-option-menu-container gsc-inline-block"><div class="gsc-orderby-label gsc-inline-block">Sort by</div><div class="gsc-selected-option-container gsc-inline-block"><div class="gsc-option-selector"></div></div><div class="gsc-option-menu-invisible" style="top: 18px;"><div class="gsc-option-menu-item"><div class="gsc-option-checkbox gsc-inline-block gsc-option-checkbox-checked"></div><div class="gsc-option gsc-inline-block">Relevance</div></div><div class="gsc-option-menu-item"><div class="gsc-option-checkbox gsc-inline-block"></div><div class="gsc-option gsc-inline-block">Date</div></div></div></div></div></td></tr></tbody></table></div><div class="gsc-adBlockNoHeight" style="height: 0px;"></div><div class="gsc-wrapper"><div class="gsc-adBlockNoHeight" style="height: 0px;"><iframe frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" scrolling="no" width="100%" name="master-a-1|{&quot;name&quot;:&quot;master-1&quot;,&quot;master-a-1&quot;:{&quot;fexp&quot;:&quot;21404,17301431,17301434,17301435,17301266,72717108&quot;,&quot;masterNumber&quot;:1,&quot;number&quot;:0,&quot;pubId&quot;:&quot;google-coop&quot;,&quot;query&quot;:&quot;City of Winds and Idylls&quot;,&quot;role&quot;:&quot;s&quot;,&quot;adLoadedCallback&quot;:null,&quot;resultsPageQueryParam&quot;:&quot;query&quot;,&quot;ie&quot;:&quot;UTF-8&quot;,&quot;maxTop&quot;:0,&quot;minTop&quot;:0,&quot;oe&quot;:&quot;UTF-8&quot;,&quot;type&quot;:&quot;ads&quot;,&quot;linkTarget&quot;:&quot;_top&quot;},&quot;master-1&quot;:{&quot;cx&quot;:&quot;000233056048401308543:j6krij_cxjg&quot;,&quot;fexp&quot;:&quot;121636677,121636678,20606,17301431,17301434,17301435,17301266,72717108&quot;,&quot;gcsc&quot;:true,&quot;masterNumber&quot;:1,&quot;number&quot;:null,&quot;pubId&quot;:&quot;google-coop&quot;,&quot;query&quot;:&quot;City of Winds and Idylls&quot;,&quot;role&quot;:&quot;m&quot;,&quot;source&quot;:&quot;gcsc&quot;,&quot;sct&quot;:&quot;ID=df170d98f2750d1e:T=1777876089:RT=1777876089:S=ALNI_MbRIrD5qlm5gjXanxOGeywkM5Ibeg&quot;,&quot;sc_status&quot;:6,&quot;hl&quot;:&quot;en&quot;,&quot;ivt&quot;:false,&quot;position&quot;:&quot;top&quot;,&quot;resultsPageQueryParam&quot;:&quot;query&quot;,&quot;ie&quot;:&quot;UTF-8&quot;,&quot;maxTop&quot;:4,&quot;minTop&quot;:0,&quot;oe&quot;:&quot;UTF-8&quot;,&quot;type&quot;:&quot;ads&quot;,&quot;linkTarget&quot;:&quot;_top&quot;}}" id="master-a-1" src="./homepage_files/iframe.html" allow="attribution-reporting" style="visibility: hidden; height: 0px; display: block;"></iframe><iframe frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" scrolling="no" width="100%" name="{&quot;name&quot;:&quot;master-1&quot;,&quot;master-a-1&quot;:{&quot;fexp&quot;:&quot;21404,17301431,17301434,17301435,17301266,72717108&quot;,&quot;masterNumber&quot;:1,&quot;number&quot;:0,&quot;pubId&quot;:&quot;google-coop&quot;,&quot;query&quot;:&quot;City of Winds and Idylls&quot;,&quot;role&quot;:&quot;s&quot;,&quot;adLoadedCallback&quot;:null,&quot;resultsPageQueryParam&quot;:&quot;query&quot;,&quot;ie&quot;:&quot;UTF-8&quot;,&quot;maxTop&quot;:0,&quot;minTop&quot;:0,&quot;oe&quot;:&quot;UTF-8&quot;,&quot;type&quot;:&quot;ads&quot;,&quot;linkTarget&quot;:&quot;_top&quot;},&quot;master-1&quot;:{&quot;cx&quot;:&quot;000233056048401308543:j6krij_cxjg&quot;,&quot;fexp&quot;:&quot;121636677,121636678,20606,17301431,17301434,17301435,17301266,72717108&quot;,&quot;gcsc&quot;:true,&quot;masterNumber&quot;:1,&quot;number&quot;:null,&quot;pubId&quot;:&quot;google-coop&quot;,&quot;query&quot;:&quot;City of Winds and Idylls&quot;,&quot;role&quot;:&quot;m&quot;,&quot;source&quot;:&quot;gcsc&quot;,&quot;sct&quot;:&quot;ID=df170d98f2750d1e:T=1777876089:RT=1777876089:S=ALNI_MbRIrD5qlm5gjXanxOGeywkM5Ibeg&quot;,&quot;sc_status&quot;:6,&quot;hl&quot;:&quot;en&quot;,&quot;ivt&quot;:false,&quot;position&quot;:&quot;top&quot;,&quot;resultsPageQueryParam&quot;:&quot;query&quot;,&quot;ie&quot;:&quot;UTF-8&quot;,&quot;maxTop&quot;:4,&quot;minTop&quot;:0,&quot;oe&quot;:&quot;UTF-8&quot;,&quot;type&quot;:&quot;ads&quot;,&quot;linkTarget&quot;:&quot;_top&quot;}}" id="master-1" src="./homepage_files/ads.html" allow="attribution-reporting" style="visibility: hidden; height: 0px; display: block;" title="Ads by Google"></iframe></div><div class="gsc-resultsbox-visible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><div class="gsc-results gsc-webResult"><div class="gsc-expansionArea"><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=AALrH26HAmw" target="_self" data-cturl="http://youtuberepeater.com/watch?v=AALrH26HAmw" data-ctorig="http://youtuberepeater.com/watch?v=AALrH26HAmw"><img class="gs-image" src="./homepage_files/images" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=AALrH26HAmw" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DAALrH26HAmw&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAIQAg&amp;usg=AOvVaw1Y8LAdw7eXHi72FpKS0fbf&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=AALrH26HAmw">Disc 1: <b>City of Winds and Idylls</b>｜Genshin Impact</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=AALrH26HAmw</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=AALrH26HAmw" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DAALrH26HAmw&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAIQAg&amp;usg=AOvVaw1Y8LAdw7eXHi72FpKS0fbf&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=AALrH26HAmw">Disc 1: <b>City of Winds and Idylls</b>｜Genshin Impact</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Nov 2, 2020 <b>...</b> Comments · <b>City of Winds and Idylls</b> - Disc 2: The Horizon of Dandelion｜Genshin Impact · Realm of Tranquil Eternity - Disc 1: Sakura and Violet&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=AALrH26HAmw</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=AALrH26HAmw"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=aeEkatw2Heg" target="_self" data-cturl="http://youtuberepeater.com/watch?v=aeEkatw2Heg" data-ctorig="http://youtuberepeater.com/watch?v=aeEkatw2Heg"><img class="gs-image" src="./homepage_files/images(1)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=aeEkatw2Heg" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DaeEkatw2Heg&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAkQAg&amp;usg=AOvVaw18iNDIS1L_Aoh9I6V5qG7l&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=aeEkatw2Heg"><b>City of Winds and Idylls</b> - Disc 2: The Horizon of Dandelion</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=aeEkatw2Heg</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=aeEkatw2Heg" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DaeEkatw2Heg&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAkQAg&amp;usg=AOvVaw18iNDIS1L_Aoh9I6V5qG7l&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=aeEkatw2Heg"><b>City of Winds and Idylls</b> - Disc 2: The Horizon of Dandelion</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Nov 2, 2020 <b>...</b> Comments · <b>City of Winds and Idylls</b> - Disc 1: <b>City of Winds and Idylls</b>｜Genshin Impact · An Evening in Fontaine Relaxing Genshin Impact Music |&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=aeEkatw2Heg</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=aeEkatw2Heg"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=suXdzXXpWXU" target="_self" data-cturl="http://youtuberepeater.com/watch?v=suXdzXXpWXU" data-ctorig="http://youtuberepeater.com/watch?v=suXdzXXpWXU"><img class="gs-image" src="./homepage_files/images(2)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=suXdzXXpWXU" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DsuXdzXXpWXU&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECBUQAg&amp;usg=AOvVaw2UNKSi4x06QbVjV2vJFCRl&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=suXdzXXpWXU">Genshin Impact OST | <b>City of Winds and Idylls</b></a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=suXdzXXpWXU</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=suXdzXXpWXU" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DsuXdzXXpWXU&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECBUQAg&amp;usg=AOvVaw2UNKSi4x06QbVjV2vJFCRl&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=suXdzXXpWXU">Genshin Impact OST | <b>City of Winds and Idylls</b></a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Oct 29, 2023 <b>...</b> DISC 1 00:00 Twilight Serenity (Genshin Impact Main Theme Ver.) 01:41 Legend of the <b>Wind</b> 03:08 The <b>City</b> Favored By <b>Wind</b> 04:11 Bustling&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=suXdzXXpWXU</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=suXdzXXpWXU"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=1aD8qrb7Vl0" target="_self" data-cturl="http://youtuberepeater.com/watch?v=1aD8qrb7Vl0" data-ctorig="http://youtuberepeater.com/watch?v=1aD8qrb7Vl0"><img class="gs-image" src="./homepage_files/images(3)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=1aD8qrb7Vl0" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3D1aD8qrb7Vl0&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECBQQAg&amp;usg=AOvVaw3ZSds2fMMsTP8Sgm9VCRTU&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=1aD8qrb7Vl0">All 3 Instrumentals <b>City of Winds and Idylls</b>, The Horizon ...</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=1aD8qrb7Vl0</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=1aD8qrb7Vl0" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3D1aD8qrb7Vl0&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECBQQAg&amp;usg=AOvVaw3ZSds2fMMsTP8Sgm9VCRTU&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=1aD8qrb7Vl0">All 3 Instrumentals <b>City of Winds and Idylls</b>, The Horizon ...</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Jul 2, 2023 <b>...</b> <b>City of Winds and Idylls</b> All 3 Instrumental <b>City of Winds and Idylls</b>, The Horizon of Dandelion, Saga of the West Wind #Genshinimpact&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=1aD8qrb7Vl0</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=1aD8qrb7Vl0"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=2McmRpYEgAo" target="_self" data-cturl="http://youtuberepeater.com/watch?v=2McmRpYEgAo" data-ctorig="http://youtuberepeater.com/watch?v=2McmRpYEgAo"><img class="gs-image" src="./homepage_files/images(4)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=2McmRpYEgAo" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3D2McmRpYEgAo&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECBMQAg&amp;usg=AOvVaw1jTQDntAQmsKazw4YwIEod&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=2McmRpYEgAo">[Genshin Impact Repertoire of Myriad Melodies] Album</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=2McmRpYEgAo</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=2McmRpYEgAo" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3D2McmRpYEgAo&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECBMQAg&amp;usg=AOvVaw1jTQDntAQmsKazw4YwIEod&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=2McmRpYEgAo">[Genshin Impact Repertoire of Myriad Melodies] Album</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Jan 2, 2025 <b>...</b> [Genshin Impact Repertoire of Myriad Melodies] Album - Mondstadt: <b>City Of Winds And Idylls</b> · Comments.</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=2McmRpYEgAo</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=2McmRpYEgAo"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=glV2TonV7Rw" target="_self" data-cturl="http://youtuberepeater.com/watch?v=glV2TonV7Rw" data-ctorig="http://youtuberepeater.com/watch?v=glV2TonV7Rw"><img class="gs-image" src="./homepage_files/images(5)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=glV2TonV7Rw" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DglV2TonV7Rw&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECA0QAg&amp;usg=AOvVaw1cu-dMyjiN3pKRgloyM0ks&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=glV2TonV7Rw">Dwelling in the Past</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=glV2TonV7Rw</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=glV2TonV7Rw" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DglV2TonV7Rw&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECA0QAg&amp;usg=AOvVaw1cu-dMyjiN3pKRgloyM0ks&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=glV2TonV7Rw">Dwelling in the Past</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Oct 15, 2020 <b>...</b> Provided to YouTube by Believe SAS Dwelling in the Past · Yu-Peng Chen · HOYO-MiX · Yu-Peng Chen Genshin Impact - <b>City of Winds and Idylls</b>&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=glV2TonV7Rw</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=glV2TonV7Rw"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=FYgGSFgWjBw" target="_self" data-cturl="http://youtuberepeater.com/watch?v=FYgGSFgWjBw" data-ctorig="http://youtuberepeater.com/watch?v=FYgGSFgWjBw"><img class="gs-image" src="./homepage_files/images(6)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=FYgGSFgWjBw" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DFYgGSFgWjBw&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECA8QAg&amp;usg=AOvVaw0FdbSWlQSGDyBk13AE0VAv&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=FYgGSFgWjBw">Genshin Impact - Disc 3: Saga of the West <b>Wind</b></a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=FYgGSFgWjBw</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=FYgGSFgWjBw" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DFYgGSFgWjBw&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECA8QAg&amp;usg=AOvVaw0FdbSWlQSGDyBk13AE0VAv&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=FYgGSFgWjBw">Genshin Impact - Disc 3: Saga of the West <b>Wind</b></a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Nov 2, 2020 <b>...</b> The Genshin Impact Release Commemorative OST - Mondstadt Chapter: "<b>City of Winds and Idylls</b>" is out now! The album's three discs "City of&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=FYgGSFgWjBw</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=FYgGSFgWjBw"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-portrait"><a class="gs-image" href="http://youtuberepeater.com/watch?v=Lrijzu2m2Tc" target="_self" data-cturl="http://youtuberepeater.com/watch?v=Lrijzu2m2Tc" data-ctorig="http://youtuberepeater.com/watch?v=Lrijzu2m2Tc"><img class="gs-image" src="./homepage_files/images(7)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=Lrijzu2m2Tc" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DLrijzu2m2Tc&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAwQAg&amp;usg=AOvVaw3B1ylVXKFNc8SF35eDRTOb&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=Lrijzu2m2Tc">Genshin Impact - <b>City of Winds and Idylls</b> - OST (Full)</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=Lrijzu2m2Tc</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=Lrijzu2m2Tc" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DLrijzu2m2Tc&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAwQAg&amp;usg=AOvVaw3B1ylVXKFNc8SF35eDRTOb&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=Lrijzu2m2Tc">Genshin Impact - <b>City of Winds and Idylls</b> - OST (Full)</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Oct 26, 2020 <b>...</b> GenshinImpact #miHoYo #OriginalSoundtrack Genshin Impact - <b>City of Winds and Idylls</b> Original Soundtrack 原神-风与牧歌之城 - <b>City of Winds</b>&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=Lrijzu2m2Tc</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=Lrijzu2m2Tc"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=qVbtHO8kr-Q" target="_self" data-cturl="http://youtuberepeater.com/watch?v=qVbtHO8kr-Q" data-ctorig="http://youtuberepeater.com/watch?v=qVbtHO8kr-Q"><img class="gs-image" src="./homepage_files/images(8)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=qVbtHO8kr-Q" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DqVbtHO8kr-Q&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAsQAg&amp;usg=AOvVaw2jU6g3-yxw1puH_Tpn8rtw&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=qVbtHO8kr-Q"><b>City of Winds and Idylls</b> (DISC 1) — GENSHIN IMPACT</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=qVbtHO8kr-Q</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=qVbtHO8kr-Q" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DqVbtHO8kr-Q&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAsQAg&amp;usg=AOvVaw2jU6g3-yxw1puH_Tpn8rtw&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=qVbtHO8kr-Q"><b>City of Winds and Idylls</b> (DISC 1) — GENSHIN IMPACT</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">May 24, 2024 <b>...</b> GENSHIN IMPACT - <b>CITY OF WINDS AND IDYLLS</b> Original Game Soundtrack Alternative Titles: 原神-风与牧歌之城 <b>City of Winds and Idylls</b> Yuán&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=qVbtHO8kr-Q</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=qVbtHO8kr-Q"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=QBOi0EUpebw" target="_self" data-cturl="http://youtuberepeater.com/watch?v=QBOi0EUpebw" data-ctorig="http://youtuberepeater.com/watch?v=QBOi0EUpebw"><img class="gs-image" src="./homepage_files/images(9)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=QBOi0EUpebw" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DQBOi0EUpebw&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECBIQAg&amp;usg=AOvVaw09dJ-tuEf4fOi2NXofWPIG&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=QBOi0EUpebw">Genshin Impact ( <b>City of Winds and Idylls</b> Disc 1 ) Soundtrack / OST</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=QBOi0EUpebw</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=QBOi0EUpebw" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DQBOi0EUpebw&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECBIQAg&amp;usg=AOvVaw09dJ-tuEf4fOi2NXofWPIG&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=QBOi0EUpebw">Genshin Impact ( <b>City of Winds and Idylls</b> Disc 1 ) Soundtrack / OST</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Mar 24, 2023 <b>...</b> Genshin Impact is an action role-playing game developed and published by miHoYo. It was released for Android, iOS, PlayStation 4,&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=QBOi0EUpebw</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=QBOi0EUpebw"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=CkWWIZlLzks" target="_self" data-cturl="http://youtuberepeater.com/watch?v=CkWWIZlLzks" data-ctorig="http://youtuberepeater.com/watch?v=CkWWIZlLzks"><img class="gs-image" src="./homepage_files/images(10)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=CkWWIZlLzks" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DCkWWIZlLzks&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECBEQAg&amp;usg=AOvVaw0pTUtI3pltlpXVm8tfFkXb&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=CkWWIZlLzks"><b>CITY OF WINDS AND IDYLLS</b> / REPERTÓRIO DE MIL MELODIAS</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=CkWWIZlLzks</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=CkWWIZlLzks" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DCkWWIZlLzks&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECBEQAg&amp;usg=AOvVaw0pTUtI3pltlpXVm8tfFkXb&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=CkWWIZlLzks"><b>CITY OF WINDS AND IDYLLS</b> / REPERTÓRIO DE MIL MELODIAS</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Jan 22, 2026 <b>...</b> MONDSTADT : <b>CITY OF WINDS AND IDYLLS</b> / REPERTÓRIO DE MIL MELODIAS. 17 views · 1 month ago ...more. EdibleSpy. 171. Subscribe.</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=CkWWIZlLzks</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=CkWWIZlLzks"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=9dA3N0p-m_M" target="_self" data-cturl="http://youtuberepeater.com/watch?v=9dA3N0p-m_M" data-ctorig="http://youtuberepeater.com/watch?v=9dA3N0p-m_M"><img class="gs-image" src="./homepage_files/images(11)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=9dA3N0p-m_M" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3D9dA3N0p-m_M&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECBAQAg&amp;usg=AOvVaw0c9CXMINTPbya7jTyjjr_B&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=9dA3N0p-m_M">Genshin Music Collection - Mondstadt</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=9dA3N0p-m_M</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=9dA3N0p-m_M" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3D9dA3N0p-m_M&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECBAQAg&amp;usg=AOvVaw0c9CXMINTPbya7jTyjjr_B&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=9dA3N0p-m_M">Genshin Music Collection - Mondstadt</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Mar 23, 2025 <b>...</b> <b>City of Winds and Idylls</b> - Disc 1: <b>City of Winds and Idylls</b>｜Genshin Impact. Genshin Impact•2.1M views · 3:34:39 · Go to channel Piano Odyssey&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=9dA3N0p-m_M</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=9dA3N0p-m_M"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=d8WBw50dTGE" target="_self" data-cturl="http://youtuberepeater.com/watch?v=d8WBw50dTGE" data-ctorig="http://youtuberepeater.com/watch?v=d8WBw50dTGE"><img class="gs-image" src="./homepage_files/images(12)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=d8WBw50dTGE" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3Dd8WBw50dTGE&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECA4QAg&amp;usg=AOvVaw39YM8evrdueaNkavtuJgKu&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=d8WBw50dTGE">Perilous Path</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=d8WBw50dTGE</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=d8WBw50dTGE" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3Dd8WBw50dTGE&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECA4QAg&amp;usg=AOvVaw39YM8evrdueaNkavtuJgKu&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=d8WBw50dTGE">Perilous Path</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Oct 15, 2020 <b>...</b> Provided to YouTube by Believe SAS Perilous Path · Yu-Peng Chen · HOYO-MiX · Yu-Peng Chen Genshin Impact - <b>City of Winds and Idylls</b>&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=d8WBw50dTGE</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=d8WBw50dTGE"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=3sVSOK2VTyY" target="_self" data-cturl="http://youtuberepeater.com/watch?v=3sVSOK2VTyY" data-ctorig="http://youtuberepeater.com/watch?v=3sVSOK2VTyY"><img class="gs-image" src="./homepage_files/images(13)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=3sVSOK2VTyY" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3D3sVSOK2VTyY&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAUQAg&amp;usg=AOvVaw3iWu9MdlHaRqjWCQP97iKJ&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=3sVSOK2VTyY">Bustling Afternoon in Mondstadt</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=3sVSOK2VTyY</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=3sVSOK2VTyY" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3D3sVSOK2VTyY&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAUQAg&amp;usg=AOvVaw3iWu9MdlHaRqjWCQP97iKJ&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=3sVSOK2VTyY">Bustling Afternoon in Mondstadt</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Oct 15, 2020 <b>...</b> Comments · <b>City of Winds and Idylls</b> - Disc 1: <b>City of Winds and Idylls</b>｜Genshin Impact · Full Genshin Impact OST Playlist · Symphony of Boreal Wind.</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=3sVSOK2VTyY</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=3sVSOK2VTyY"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=gYSXkpjydpI" target="_self" data-cturl="http://youtuberepeater.com/watch?v=gYSXkpjydpI" data-ctorig="http://youtuberepeater.com/watch?v=gYSXkpjydpI"><img class="gs-image" src="./homepage_files/images(14)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=gYSXkpjydpI" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DgYSXkpjydpI&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAcQAg&amp;usg=AOvVaw3zAq0aML00omZYZ0ZPq3XI&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=gYSXkpjydpI">Opera Singer Reacts: The <b>Wind</b> and The Star Traveler Album + <b>City</b> ...</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=gYSXkpjydpI</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=gYSXkpjydpI" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DgYSXkpjydpI&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAcQAg&amp;usg=AOvVaw3zAq0aML00omZYZ0ZPq3XI&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=gYSXkpjydpI">Opera Singer Reacts: The <b>Wind</b> and The Star Traveler Album + <b>City</b> ...</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Sep 12, 2022 <b>...</b> Opera Singer Reacts: The Wind and The Star Traveler Album + <b>City of Winds and Idylls</b> || Genshin OST. 41K views · Streamed 3 years ago ...more&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=gYSXkpjydpI</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=gYSXkpjydpI"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=5viZgefj-1A" target="_self" data-cturl="http://youtuberepeater.com/watch?v=5viZgefj-1A" data-ctorig="http://youtuberepeater.com/watch?v=5viZgefj-1A"><img class="gs-image" src="./homepage_files/images(15)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=5viZgefj-1A" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3D5viZgefj-1A&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAgQAg&amp;usg=AOvVaw0SbX_ShciY7uVw02MUKKaO&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=5viZgefj-1A">Whirl of Boreal <b>Wind</b></a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=5viZgefj-1A</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=5viZgefj-1A" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3D5viZgefj-1A&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAgQAg&amp;usg=AOvVaw0SbX_ShciY7uVw02MUKKaO&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=5viZgefj-1A">Whirl of Boreal <b>Wind</b></a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Oct 15, 2020 <b>...</b> Provided to YouTube by Believe SAS Whirl of Boreal Wind · Yu-Peng Chen · HOYO-MiX · Yu-Peng Chen Genshin Impact - <b>City of Winds and Idylls</b>&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=5viZgefj-1A</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=5viZgefj-1A"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=JpxBvbKzavI" target="_self" data-cturl="http://youtuberepeater.com/watch?v=JpxBvbKzavI" data-ctorig="http://youtuberepeater.com/watch?v=JpxBvbKzavI"><img class="gs-image" src="./homepage_files/images(16)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=JpxBvbKzavI" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DJpxBvbKzavI&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAMQAg&amp;usg=AOvVaw3qbQDoJHiSWFsmtfv9bNCT&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=JpxBvbKzavI">Another Day in Mondstadt</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=JpxBvbKzavI</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=JpxBvbKzavI" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DJpxBvbKzavI&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAMQAg&amp;usg=AOvVaw3qbQDoJHiSWFsmtfv9bNCT&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=JpxBvbKzavI">Another Day in Mondstadt</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Oct 15, 2020 <b>...</b> <b>City of Winds and Idylls</b> - Disc 1: <b>City of Winds and Idylls</b>｜Genshin Impact · Genshin White - Let Silence Sing | 10 Hours of Calm Genshin Music.</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=JpxBvbKzavI</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=JpxBvbKzavI"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=nxjNczusHcQ" target="_self" data-cturl="http://youtuberepeater.com/watch?v=nxjNczusHcQ" data-ctorig="http://youtuberepeater.com/watch?v=nxjNczusHcQ"><img class="gs-image" src="./homepage_files/images(17)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=nxjNczusHcQ" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DnxjNczusHcQ&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAQQAg&amp;usg=AOvVaw2Ybn-pvdL4Ct0h4lK1fo5h&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=nxjNczusHcQ">Whispering Plain</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=nxjNczusHcQ</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=nxjNczusHcQ" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DnxjNczusHcQ&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAQQAg&amp;usg=AOvVaw2Ybn-pvdL4Ct0h4lK1fo5h&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=nxjNczusHcQ">Whispering Plain</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Oct 15, 2020 <b>...</b> Provided to YouTube by Believe SAS Whispering Plain · Yu-Peng Chen · HOYO-MiX · Yu-Peng Chen Genshin Impact - <b>City of Winds and Idylls</b>&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=nxjNczusHcQ</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=nxjNczusHcQ"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=K3-2ED9swLo" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DK3-2ED9swLo&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAYQAQ&amp;usg=AOvVaw3SE3oHRRgG5lYRK8UNroZa&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=K3-2ED9swLo">[G. Impact HD Wallpaper] <b>City of Winds and Idylls</b>/D.2: OST 065 ...</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=K3-2ED9swLo</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>http://youtuberepeater.com</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=K3-2ED9swLo" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3DK3-2ED9swLo&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAYQAQ&amp;usg=AOvVaw3SE3oHRRgG5lYRK8UNroZa&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=K3-2ED9swLo">[G. Impact HD Wallpaper] <b>City of Winds and Idylls</b>/D.2: OST 065 ...</a></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">[G. Impact HD Wallpaper] <b>City of Winds and Idylls</b>/D.2: OST 065 - Dwelling in the Past. 5 views · 4 years ago ...more&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=K3-2ED9swLo</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=K3-2ED9swLo"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-webResult gsc-result"><div class="gs-webResult gs-result"><div class="gsc-table-cell-thumbnail gsc-thumbnail"><div class="gs-image-box gs-web-image-box gs-web-image-box-landscape"><a class="gs-image" href="http://youtuberepeater.com/watch?v=6AG7TMFj8Wk" target="_self" data-cturl="http://youtuberepeater.com/watch?v=6AG7TMFj8Wk" data-ctorig="http://youtuberepeater.com/watch?v=6AG7TMFj8Wk"><img class="gs-image" src="./homepage_files/images(18)" alt="Thumbnail image"></a></div></div><div class="gsc-thumbnail-inside"><div class="gs-title"><a class="gs-title" href="http://youtuberepeater.com/watch?v=6AG7TMFj8Wk" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3D6AG7TMFj8Wk&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAoQAg&amp;usg=AOvVaw3EsW2rM9nukLU7WqhkxMUq&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=6AG7TMFj8Wk">Dusk in Mondstadt</a></div></div><div class="gsc-url-top"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=6AG7TMFj8Wk</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"><span>YouTube</span><span> › watch</span></div></div><div class="gsc-table-result" role="main"><div class="gsc-table-cell-snippet-close"><div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"><a class="gs-title" href="http://youtuberepeater.com/watch?v=6AG7TMFj8Wk" target="_self" dir="ltr" data-cturl="http://youtuberepeater.com/watch%3Fv%3D6AG7TMFj8Wk&amp;sa=U&amp;ved=2ahUKEwj397nSgJ-UAxX-KEQIHR05A_YQFnoECAoQAg&amp;usg=AOvVaw3EsW2rM9nukLU7WqhkxMUq&amp;fexp=121636677,121636678" data-ctorig="http://youtuberepeater.com/watch?v=6AG7TMFj8Wk">Dusk in Mondstadt</a></div><div><span><span><span></span></span></span></div><div class="gs-bidi-start-align gs-snippet" dir="ltr">Oct 15, 2020 <b>...</b> Provided to YouTube by Believe SAS Dusk in Mondstadt · Yu-Peng Chen · HOYO-MiX · Yu-Peng Chen Genshin Impact - <b>City of Winds and Idylls</b>&nbsp;...</div><div class="gsc-url-bottom"><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" dir="ltr">http://youtuberepeater.com</div><div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" dir="ltr" style="word-break:break-all;">http://youtuberepeater.com/watch?v=6AG7TMFj8Wk</div></div><div class="gs-richsnippet-box" style="display: none;"></div><div class="gs-per-result-labels" url="https://www.youtube.com/watch?v=6AG7TMFj8Wk"></div></div></div></div></div><div class="gsc-webResult-divider"></div><div class="gsc-adBlockNoHeight" style="height: 0px;"></div></div><div class="gsc-cursor-box gs-bidi-start-align" dir="ltr"><div class="gsc-cursor"><div class="gsc-cursor-page gsc-cursor-current-page" tabindex="0">1</div><div class="gsc-cursor-page" aria-label="Page 2" role="link" tabindex="0">2</div><div class="gsc-cursor-page" aria-label="Page 3" role="link" tabindex="0">3</div><div class="gsc-cursor-page" aria-label="Page 4" role="link" tabindex="0">4</div><div class="gsc-cursor-page" aria-label="Page 5" role="link" tabindex="0">5</div></div></div><div class="gcsc-more-maybe-branding-root"><a href="https://www.google.com/search?client=ms-google-coop&amp;q=City+of+Winds+and+Idylls&amp;cx=000233056048401308543:j6krij_cxjg" target="_self"><div class="gcsc-find-more-on-google"><svg width="12" height="12" viewBox="0 0 13 13" class="gcsc-find-more-on-google-magnifier"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg><span class="gcsc-find-more-on-google-text">Search "</span><span class="gcsc-find-more-on-google-query">City of Winds and Idylls</span><span class="gcsc-find-more-on-google-text">" on Google</span></div></a></div></div></div></div></div></div><div class="gsc-modal-background-image gsc-modal-background-image-visible" tabindex="0"></div></div></div></div></div>  
+    <div id="___gcse_1"><div class="gsc-control-cse gsc-control-cse-en"><div class="gsc-control-wrapper-cse" dir="ltr"><div class="gsc-results-wrapper-overlay"><div class="gsc-results-close-btn" tabindex="0"></div><div class="gsc-positioningWrapper"><div class="gsc-tabsAreaInvisible"><div aria-label="refinement" role="tab" class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Custom Search</div><span class="gs-spacer"> </span></div></div><div class="gsc-positioningWrapper"><div class="gsc-refinementsAreaInvisible"></div></div><div class="gsc-above-wrapper-area-invisible"><div class="gsc-above-wrapper-area-backfill-container"></div><table cellspacing="0" cellpadding="0" role="presentation" class="gsc-above-wrapper-area-container"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td><td class="gsc-orderby-container"><div class="gsc-orderby-invisible"><div class="gsc-option-menu-container gsc-inline-block"><div class="gsc-orderby-label gsc-inline-block">Sort by</div><div class="gsc-selected-option-container gsc-inline-block"><div class="gsc-option-selector"></div></div><div class="gsc-option-menu-invisible"><div class="gsc-option-menu-item"><div class="gsc-option-checkbox gsc-inline-block gsc-option-checkbox-checked"></div><div class="gsc-option gsc-inline-block">Relevance</div></div><div class="gsc-option-menu-item"><div class="gsc-option-checkbox gsc-inline-block"></div><div class="gsc-option gsc-inline-block">Date</div></div></div></div></div></td></tr></tbody></table></div><div class="gsc-adBlockInvisible"></div><div class="gsc-wrapper"><div class="gsc-adBlockInvisible"></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><div><div class="gsc-expansionArea"></div></div></div></div></div></div><div class="gsc-modal-background-image" tabindex="0"></div></div></div></div>    
+<!-- 
+<div style="width:100%; padding-left:40px;"><iframe width="705" height="400"   
+src="https://www.youtube-nocookie.com/embed/AALrH26HAmw?version=3&loop=1&playlist=AALrH26HAmw&autoplay=1&rel=0&showinfo=1&iv_load_policy=3&time_continue=0&t=0&end=0&start=0" 
+frameborder="0" allow="accelerometer; loop; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
+<font  color="#bbb" >(Related videos will be back)  </font>                      
+                 <br>
+    <div style="color:#bbb; font-size:15px;width:720px; text-align:left">
+      (Mini player will also be back)       &nbsp;&nbsp;&nbsp;&nbsp; 
+                                  <br />       <br />                                   
+          
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdZyGE3fPOeEd1HTL9DI20dvURSkd-bvlh6AtTeeDP7ZC10Gw/viewform?embedded=true" width="780" height="1140" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+</div><br />
+-->  <div style="color:#777 ; font-size:19px; margin-left:50px; margin-top:-30px;  margin-bottom:-20px; text-align:left;  "> <br>We are working on the only open Browser Extension for YouTube  <br> with 250+ features, for 800,000 users:
+ <a href="https://chrome.google.com/webstore/detail/improve-youtube-open-sour/bnomihfieiccainjcjblhegjgglakjdd">YouTube extension</a>, <a rel="nofollow" href="https://github.com/code-for-charity/YouTube-Extension">GitHub</a></div>  
+<!--  </div> </div>   -->        <div class="videoBottomLink" id="Div1">  
+             
+     
+<!-- simpliest but useless way of embedding    
+ object width="425" height="344">    
+< param name="movie" value="http://www.youtube.com/v/&hl=en"></param>
+< embed src="http://www.youtube.com/v/***VIDEOID***&hl=en&autoplay=1&loop=1"
+  typeX="application/x-shockwave-flash" width="425" height="344"></embed>
+</object-->
+
+
+<script>
+
+
+
+function onPlayerError(event) {
+  console.log('Error:', event.data);
+
+  if (event.data === 101 || event.data === 150) {
+  
+if (/^.*\.youtuberepeater.com/.test(window.location.href) ) {
+    window.location.href = 'http://loopyoutube.com' + window.location.pathname + window.location.search + window.location.hash;
+}
+
+  }
+}
+
+/* function onPlayerStateChange(event) {
+  if (event.data === YT.PlayerState.PLAYING) {
+    console.log('Playing');
+  }
+}
+   */
+  player.addEventListener('onError', onPlayerError);
+  player.addEventListener('onStateChange', onPlayerStateChange);
+</script>
+
+    <img id="gecko" src="./homepage_files/gecko-1434.gif" class="rotate" style="position: fixed; bottom: 0px; right: 25px; z-index: 222222; max-width: 37vw; width: 200px; opacity: 0;">
+<style>  
+  .rotate{animation:spin 2.3s linear forwards}
+@keyframes spin{
+  9%{transform:translate(0) rotate(0deg) scale(1)}
+  10%{transform:translate(0) rotate(-15deg) scale(0.7)}
+  80%{transform:translate(0) rotate(360deg) scale(0.7)}
+  93%{transform:translate(0) rotate(410deg) scale(0.7)}
+  100%{transform:translate(54%,69%) rotate(360deg) scaleX(-1)}
+}
+                
+.gsc-input-box {background-color: rgba(255,255,255,0.47); margin-left:-35px; width:min(100vw, 487px);}
+    .gsc-input-box  input    {background-color: rgba(255,255,255,0.17);}
+  #Div1 input {         background-color: rgba(255,255,255,0.67) !important;}
+video, #player {     max-with: 100vw !important;
+  position: relative;
+  z-index: 20002000 !important;
+}
+
+#ambientFX {
+  position: fixed;
+  pointer-events: none;
+  z-index: 20000000;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0.55;
+  transition: opacity .7s ease;    
+}
+#ambientFX.active {
+  opacity: 0.8;
+}
+#ambientFX.faint {opacity: 0.4;}
+.afx-bar {
+  flex: 1;
+  margin: 0;
+  height: 100%;
+  transform-origin: bottom;
+  transform: scaleY(0.2);
+  transition: transform 0.08s linear;
+  background: rgba(110,190,175,0.15);       
+}    
+#logo     {background-color: transparent}
+
+#gs_tti50::before::after {
+  content: "(=Google Videos Site:Youtube.com)";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  border: 1px #555 solid;
+  border-radius: 2px;
+  background: #eee;
+  color: #111;
+  padding: 5px;
+  font-size: 12px; line-height:7px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+#gs_tti50::before::after:hover{
+  opacity: 1;
+}
+.gsc-results-wrapper-overlay
+               {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE/Edge legacy */
+}                
+.gsc-results-wrapper-overlay::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari, Edge */
+}
+
+.gs-image { transition: opacity 0.3 ease, filter 0.3s ease; }
+
+#header_row,
+#_ctl0_Content_videoBottom1 { transition: opacity 3.5s ease; }
+
+.menu_row { transition: opacity 3.5s ease, background-color 3.5s ease; }
+
+body { transition: background-color 3.5s ease; }
+
+ body.dim div#container, div#container { transition: box-shadow 3.5s ease, background-color 3.5s ease; }
+
+.gsc-results-wrapper-overlay,
+.gsc-results-wrapper-visible,
+.gsc-webResult,
+.gsc-result {
+  transition: background-color 3.5s ease, border-color 3.5s ease;
+}
+
+ 
+
+
+
+            .gs-image    {opacity:0.9; filter:blur(0.1px); transition: all 0.17s ease; }  
+             .gs-image:hover    {opacity:1; filter:blur(0)} 
+             
+       body.dim  .gs-image   {opacity:0.6; filter:blur(8px)}  
+  body.dim  #header_row  {opacity:0.3}     
+  body.dim #_ctl0_Content_videoBottom1  {opacity:0} 
+
+ @media (prefers-color-scheme: light)    {    
+ body.dim {background-color: #999 !important;  }     
+ body.dim  div#container {  box-shadow: inset 0 0 3vw 3vw #999 !important; background-color: #b9b8b3!important; } 
+ div#container {        transition:box-shadow 3s ease;      }
+ body.dim  .gsc-results-wrapper-overlay, body.dim .gsc-results-wrapper-visible  {background-color:#aaa !important; }    
+ body.dim   .gsc-webResult, body.dim  .gsc-result  {background-color:#aaa !important; border-color:#a1a1a1 !important; }
+    
+ }
+@media (prefers-color-scheme: dark) { .afx-bar{ padding-bottom: 30px !important } 
+body.dim {  background-color: #000 !important;    }
+body.dim  .gsc-results-wrapper-overlay, body.dim .gsc-results-wrapper-visible,
+ body.dim   .gsc-webResult, body.dim   {background-color: #000!important;border-color:#111 !important; 
+}
+ .gsc-webResult-divider {display:none !important}
+  
+ }
+#ambientFX.frozen {display:none}
+
+ #header_row,  .menu_row , #footer_row   {background-color:transparent !important;}
+</style>
+<script>
+(function(){
+const BAR_COUNT = 50*(window.width || screen.width)/1800;
+const MIN_SCALE = 0.2;
+function getPlayer(){
+  return document.querySelector("video, #player");
+}
+function createFX(){
+  const fx = document.createElement("div");
+  fx.id = "ambientFX";
+  document.body.appendChild(fx);
+  for(let i=0;i<BAR_COUNT;i++){
+    const b = document.createElement("div");
+    b.className = "afx-bar";
+    fx.appendChild(b);
+  }
+  return fx;
+}
+function positionFX(fx, player){
+  const r = player.getBoundingClientRect();
+  fx.style.left = r.left + "px";
+  fx.style.width = r.width + "px";
+  fx.style.top = "0px";
+  fx.style.height = r.top + "px";
+}
+/* =========================
+   ANIMATION ========================= */
+function fallback(bars, fx){
+  let t = 0;
+  function loop(){
+    t += 0.05;
+    const faint = fx.classList.contains("faint");
+    const frozen = fx.classList.contains("frozen");     
+    bars.forEach((b,i)=>{
+      let v = (Math.sin(t + i*0.3) + 1)/2;
+      if(faint) v *= 0.9;
+      if(frozen) v = 0;
+
+      b.style.transform =
+        `scaleY(${Math.max(MIN_SCALE, v)})`;
+    });
+
+    requestAnimationFrame(loop);
+  }
+
+  loop();
+}
+
+/* =========================
+   INIT
+========================= */
+function init(){
+  const player = getPlayer();
+  if(!player) return setTimeout(init,800);
+
+  const fx = createFX();
+  const bars = [...fx.children];
+
+  function update(){
+    positionFX(fx, player);
+  }
+
+  update();
+  addEventListener("resize", update);
+  addEventListener("scroll", update);
+
+  fallback(bars, fx);
+
+  /* =========================
+     3 STATE CONTROLLER
+  ========================= */
+  let t1, t2;
+
+  function show(){
+
+    // ACTIVE (0–1.8s)
+    document.body.classList.remove("dim");
+    fx.classList.add("active");
+    fx.classList.remove("faint","frozen");
+    // gecko.style.opacity="0.82";  
+
+    clearTimeout(t1);
+    clearTimeout(t2); 
+
+    // FAINT (1.8s)
+    t1 = setTimeout(()=>{
+      fx.classList.remove("active");
+      fx.classList.add("faint");
+    },2200);
+
+    // DEEP IDLE (5s)
+    t2 = setTimeout(()=>{
+      document.body.classList.add("dim");
+      fx.classList.remove("active","faint");
+      fx.classList.add("frozen");
+      gecko.style.opacity="0";
+    },3800);
+  }
+
+  addEventListener("mousemove", show);
+  addEventListener("touchstart", show);
+  addEventListener("scroll", show);
+  addEventListener("keyup", show);
+  show();
+}
+
+init();
+
+})();
+
+
+
+
+
+</script>
+
+
+
+
+
+
+    
+  </div>
+  
+  <div id="footer_row">
+
+    <div id="footer_right">
+     made with ♥ since 2009
+    </div>
+  </div>
+
+</div>
+
+<!-- google analytics start 
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-3572574-6");
+pageTracker._trackPageview();
+setTimeout('noBounce60()',60000);
+} catch(err) {}
+function noBounce60() {try{pageTracker._trackEvent('NoBounce', '60sec');}catch(err){}}
+</script>
+
+--><!-- google analytics end -->
+
+<script>
+
+
+function leftofplayer() {
+  const player = document.getElementById('player');
+  if (!player) return;
+
+  var rect = player.getBoundingClientRect();
+  const spaceRight = window.innerWidth - rect.right;
+
+  const leftValue = rect.right + 11; // same variable
+
+  const style = document.createElement('style');
+       //iframe[title="reCAPTCHA"] {left: ${leftValue}px !important; position: relative !important; } 
+  if (spaceRight >= 200) {
+    // right side
+    style.innerHTML = `
+      .gsc-results-wrapper-overlay,
+      .gsc-results-wrapper-visible {
+        left: ${leftValue}px !important; top: 86px !important; }     
+    `;      
+  } else {
+    // below player
+  //   #_ctl0_Content_videoInfo1, #_ctl0_Content_timeBox { max-width:90vw !important; }
+   const scale = window.innerWidth < 500 ? window.innerWidth / 500   : 1;
+     rect = player.getBoundingClientRect();
+    style.innerHTML = `   #logo { height:74px !important; margin-top: 22px}  
+    #player, video, .videoPlayer      
+      
+       {object-fit:contain !important; max-width: 
+       min(100vw,${screen.width}px) !important; max-height:56.25vw !important;
+       top:-60px;}
+          .gsc-input-box  {background-color: rgba(230,230,230,1) !important; height: 45px !important; position:fixed; opacity:1 !important;
+             left:39px; top: -14px; max-width:98vw !important;}                 
+      .gsc-results-wrapper-overlay,
+      .gsc-results-wrapper-visible , .gsc-webResult,  .gsc-result {    max-width: min(500px, ${window.innerWidth - 12}px) !important; 
+        left: ${rect.left}px !important;     
+        top: min(calc(56.25vw + 95px), calc(23px + ${rect.bottom}px)) !important;
+      //  transform: scale(${scale}); 
+       transform-origin: top left;  
+        object-fit:contain !important;      } 
+        .gs-image {padding-left: -15px;}
+ 
+            .gsc-webResult *,  .gsc-result  * {padding:-5px !important}    
+
+      
+    `;
+  }
+
+  document.head.appendChild(style);
+}
+
+window.addEventListener('load', leftofplayer);
+window.addEventListener('resize', leftofplayer);
+
+window.addEventListener('load', function () {
+    var search = document.getElementById('gsc-i-id1');
+       search.select();
+   /* var btn = document.getElementById('_ctl0_Content_videoStartEnd1');
+    if (btn) {
+        btn.click(); 
+    }                */    
+  setTimeout(() => {
+  // search.focus();
+   search.select();
+  }, 1200);
+
+});
+
+document.addEventListener('pointerup', function(e) { 
+setTimeout(() => {
+if (e.pointerType === 'mouse' && !['INPUT','BUTTON','SELECT','TEXTAREA'].includes(document.activeElement.tagName)
+&& window.getSelection().toString() === '') 
+{document.getElementById('gsc-i-id1').focus();}
+}, 500 );
+})
+
+
+
+</script>     
+ 
+
+         <style>
+         
+         
+#beforeTag{
+
+  position:absolute;
+  top:40px;left:280px;
+  background:rgba(225,222,222,0.3);
+  border-radius:5px;
+  font-size:14px; line-height:15px; font-family: Arial Narrow
+  cursor:pointer;
+  border:1px solid #dadce0;
+  z-index:2147483647 !important;
+  user-select:none; color:#555; font-weight:400;
+}
+#beforeTag.on{
+  background:rgba(255,252,222,0.5);
+  border-color:#fe0;  color:#555
+}
+</style>
+
+
+<script>
+function triggerEnter(input){
+  input.focus();
+  input.value = input.value; // sync 
+  input.dispatchEvent(new KeyboardEvent("keydown", {
+    key: "Enter",
+    code: "Enter",
+    keyCode: 13,
+    which: 13,
+    bubbles: true
+  }));
+}       
+                             
+function init(){
+  const box = document.querySelector("#___gcse_0");
+  if (!box || document.getElementById("beforeTag")) return; 
+  box.style.position = "relative";
+
+  const tag = document.createElement("div");
+  tag.id = "beforeTag";
+  tag.innerHTML = "before:2024";
+  tag.title = "(Can avoid AI Videos)   (some of us search old music)";
+  box.appendChild(tag);
+
+  const input = box.querySelector("input");
+  if (!input) return;
+let timer = null;
+
+input.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") return;
+
+  clearTimeout(timer);
+
+  timer = setTimeout(() => {
+    run();
+    timer = null;
+  }, 1800);
+});
+
+function reset() {
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    timer = null;
+  }, 1800);
+}
+
+input.addEventListener("keydown", reset);
+
+const inContainer = el => el?.closest?.(".gsc-completion-container");
+
+document.addEventListener("mouseover", e => {
+ if (inContainer(e.target)) reset();
+}, true);
+document.addEventListener("touchstart", e => {
+  if (inContainer(e.target)) reset();
+}, { passive: true });
+/* document.addEventListener("focusin", e => {
+  if (inContainer(e.target)) reset();
+});
+document.addEventListener("selectionchange", () => {
+  const s = window.getSelection();
+  if (s && !s.isCollapsed && inContainer(s.anchorNode?.parentElement)) active();
+});
+  */
+
+  const sync = () => {
+    tag.classList.toggle("on", input.value.includes("before:2024"));
+  };
+
+  const run = () => {
+    sync();
+    triggerEnter(input);
+  };
+
+  tag.onclick = () => {
+    let q = input.value.trim();
+
+    q = q.includes("before:2024")
+      ? q.replace(/\s+before:2024/, "")
+      : q + " before:2024";
+
+    input.value = q;
+
+    run();
+  };
+
+
+  sync();
+}
+
+const wait = setInterval(() => {
+  if (window.google?.search?.cse) {
+    clearInterval(wait);
+    init();
+  }
+}, 150);
+</script>
+
+
+
+
+</font></div><div id="ambientFX" class="frozen" style="left: 0px; width: 0px; top: 0px; height: 0px;"><div class="afx-bar" style="transform: scaleY(0.479225);"></div><div class="afx-bar" style="transform: scaleY(0.627785);"></div><div class="afx-bar" style="transform: scaleY(0.764931);"></div><div class="afx-bar" style="transform: scaleY(0.878411);"></div><div class="afx-bar" style="transform: scaleY(0.958089);"></div><div class="afx-bar" style="transform: scaleY(0.996847);"></div><div class="afx-bar" style="transform: scaleY(0.991223);"></div><div class="afx-bar" style="transform: scaleY(0.94172);"></div><div class="afx-bar" style="transform: scaleY(0.852759);"></div><div class="afx-bar" style="transform: scaleY(0.732288);"></div><div class="afx-bar" style="transform: scaleY(0.591066);"></div><div class="afx-bar" style="transform: scaleY(0.44171);"></div><div class="afx-bar" style="transform: scaleY(0.297561);"></div><div class="afx-bar" style="transform: scaleY(0.2);"></div><div class="afx-bar" style="transform: scaleY(0.2);"></div><div class="afx-bar" style="transform: scaleY(0.2);"></div><div class="afx-bar" style="transform: scaleY(0.2);"></div><div class="afx-bar" style="transform: scaleY(0.2);"></div><div class="afx-bar" style="transform: scaleY(0.2);"></div><div class="afx-bar" style="transform: scaleY(0.207554);"></div><div class="afx-bar" style="transform: scaleY(0.340465);"></div><div class="afx-bar" style="transform: scaleY(0.487627);"></div><div class="afx-bar" style="transform: scaleY(0.635895);"></div><div class="afx-bar" style="transform: scaleY(0.772023);"></div><div class="afx-bar" style="transform: scaleY(0.883853);"></div><div class="afx-bar" style="transform: scaleY(0.961394);"></div><div class="afx-bar" style="transform: scaleY(0.99772);"></div><div class="afx-bar" style="transform: scaleY(0.989586);"></div><div class="afx-bar" style="transform: scaleY(0.937719);"></div><div class="afx-bar" style="transform: scaleY(0.846752);"></div><div class="afx-bar" style="transform: scaleY(0.72481);"></div><div class="afx-bar" style="transform: scaleY(0.582787);"></div><div class="afx-bar" style="transform: scaleY(0.433369);"></div><div class="afx-bar" style="transform: scaleY(0.289903);"></div><div class="afx-bar" style="transform: scaleY(0.2);"></div><div class="afx-bar" style="transform: scaleY(0.2);"></div></div><table cellspacing="0" cellpadding="0" role="presentation" class="gstl_50 gssb_c" style="width: 489px; display: none; top: 42px; position: absolute; left: 3px;"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table><table cellspacing="0" cellpadding="0" role="presentation" class="gstl_51 gssb_c" style="width: 2px; display: none; top: 0px; position: absolute; left: -1px;"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table> <div style="display:none"> <span id="private_ratings"> <span class="gsc-snippet-metadata"> <span data-if="Vars.ratingstars"> <span class="gsc-rating-bar"> <span data-attr="{style:&#39;width:&#39; + (Vars.ratingstars * 20) + &#39;%&#39;}"></span> </span> <span data-if="Vars.ratingcount"> <span data-body="&#39; &#39; + Vars.ratingcount"></span> <span> reviews</span> </span> </span> <span data-if="Vars.totaltime"> <span data-if="Vars.ratingstars &amp;&amp; Vars.ratingcount"> - </span> <span data-body="Vars.totaltime"></span> </span> <span data-if="Vars.calories"> <span data-if="Vars.ratingstars &amp;&amp; Vars.ratingcount || Vars.totaltime"> - </span> <span data-body="Vars.calories"></span> <span> cal</span> </span> <span data-if="Vars.pricerange"> <span data-if="Vars.ratingstars &amp;&amp; Vars.ratingcount || Vars.totaltime || Vars.calories"> - </span> <span> Price range: </span> <span data-body="Vars.pricerange"></span> </span> <span data-if="Vars.reviewer" class="gsc-reviewer"> <span data-body="&#39; &#39; + Vars.reviewer"></span> </span> </span> </span> <span id="private_hproduct"> <span class="gsc-snippet-metadata"> <span data-if="Vars.availability">Availability: <span data-body="Vars.availability"></span>.</span> <span data-if="Vars.availability &amp;&amp; Vars.price">&nbsp;</span> <span data-if="Vars.price"> Price: <span data-body="Vars.price"></span>.</span> </span> </span> <span id="private_hrecipe"> <span data-if="Vars.author" class="gsc-author"> <span data-body="&#39; &#39; + Vars.author"></span> </span> </span> <span id="private_recipe"> <span data-attr="0" data-body="render(&#39;private_ratings&#39;,google.search.richsnippets.merge(richSnippet.recipe))"> </span> <span data-if="Vars.richSnippet.hrecipe &amp;&amp; Vars.richSnippet.hrecipe.author &amp;&amp; !Vars.richSnippet.recipe.reviewer" data-attr="0" data-body="render(&#39;private_hrecipe&#39;,richSnippet.hrecipe)"> </span> </span> <span id="private_person"> <span data-vars="{vcard:google.search.richsnippets.merge(Vars.richSnippet.vcard)}"> <span data-if="Vars.richSnippet.vcard &amp;&amp; vcard.adr"> <span data-if="vcard.adr" class="gs-location"> <span data-body="&#39; &#39; + vcard.adr"> </span> </span> </span> <span data-elif="Vars.richSnippet.person"> <span data-if="person.role" class="gsc-role"> <span data-attr="0" data-body="&#39; &#39; + person.role"> </span> </span> <span data-if="person.org" class="gsc-org"> <span data-body="&#39; @&#39; + person.org"> </span> </span> <span data-if="person.location" class="gsc-location"> <span data-if="person.org || person.role || Vars.richSnippet.review"> - </span> <span data-body="&#39; &#39; + person.location"> </span> </span> </span> <span data-if="Vars.richSnippet.vcard &amp;&amp; vcard.tel" class="gsc-tel"> <span data-if="(person &amp;&amp; (person.org || person.role || Vars.richSnippet.review || person.location)) || (Vars.richSnippet.vcard &amp;&amp; vcard.adr) "> - </span> <span data-body="&#39; Tel: &#39; + vcard.tel"> </span> </span> </span> </span> <span id="private_metadata" class="gsc-snippet-metadata"> <span data-vars="{person:google.search.richsnippets.merge(Vars.richSnippet.person), product:google.search.richsnippets.merge(Vars.richSnippet.hproduct)}"> <span data-if="Vars.richSnippet.recipe" data-attr="0" data-body="render(&#39;private_recipe&#39;, Vars)"> </span> <span data-elif="Vars.richSnippet.review" data-attr="0" data-body="render(&#39;private_ratings&#39;,google.search.richsnippets.merge(richSnippet.review))"> </span> <span data-if="Vars.richSnippet.hproduct &amp;&amp; (product.availability || product.price)" data-attr="0" data-body="render(&#39;private_hproduct&#39;, product)"> </span> <span data-elif="Vars.richSnippet.person || Vars.richSnippet.vcard" data-attr="0" data-body="render(&#39;private_person&#39;, Vars)"> </span> </span> </span> <div id="base_facets"> <div class="gsc-context-box" data-facetgroup="title"> </div> </div> <div id="base_facetGroupEntry"> <div> <div class="gsc-facet-label gsc-col" style="display:inline-block;"> <a data-attr="{&#39;data-refinementLabel&#39;: label, &#39;label-with-op&#39;: label_with_op}" data-body="anchor"></a> </div> <div class="gsc-facet-result gsc-col" data-body="html(width + &#39;%&#39;)" style="display:inline-block;"> </div> <div data-attr="{&#39;class&#39;: index == &#39;first&#39; ? &#39;gsc-chart gsc-top gsc-col&#39; : index == &#39;last&#39; ? &#39;gsc-chart gsc-bottom gsc-col&#39; : index == &#39;sizeone&#39; ? &#39;gsc-chart gsc-bottom gsc-col gsc-top&#39; : &#39;gsc-chart gsc-col&#39;}" style="display:inline-block;"> <div class="" data-attr="{style:&#39;width:&#39; + width + &#39;%&#39;}"></div> </div> </div> </div> <div id="base_webResult"> <div class="gs-webResult gs-result" data-vars="{longUrl:function() { var i = unescapedUrl.indexOf(visibleUrl); return i &lt; 1 ? visibleUrl : unescapedUrl.substring(i);}}"> <div data-if="Vars.richSnippet" data-attr="0" data-body="render(&#39;thumbnail&#39;,richSnippet,{url:unescapedUrl,target:target})"> </div> <div class="gsc-thumbnail-inside"> <div class="gs-title"> <a class="gs-title" data-attr="{href:unescapedUrl,target:target,dir:bidiHtmlDir(title)}" data-body="html(title)"> </a> </div> </div> <div class="gsc-url-top"> <div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" data-body="visibleUrl" data-attr="{dir:bidiTextDir(visibleUrl)}"> </div> <div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" data-body="Vars.formattedUrl ? html(Vars.formattedUrl) : longUrl()" data-attr="{dir: Vars.formattedUrl ? bidiHtmlDir(Vars.formattedUrl) : bidiTextDir(longUrl()), style:&#39;word-break:break-all;&#39;}"> </div> <div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb"> <span data-body="(Vars.richSnippet &amp;&amp; Vars.richSnippet.metatags &amp;&amp; Vars.richSnippet.metatags.ogSiteName) || (Vars.breadcrumbUrl &amp;&amp; Vars.breadcrumbUrl.host) || visibleUrl"></span> <span data-if="Vars.breadcrumbUrl?.crumbs" data-foreach="Vars.breadcrumbUrl?.crumbs" data-body="&#39; › &#39; + Cur"></span> </div> </div> <div class="gsc-table-result" role="main"> <div class="gsc-table-cell-snippet-close"> <div class="gs-title gsc-table-cell-thumbnail gsc-thumbnail-left"> <a class="gs-title" data-attr="{href:unescapedUrl,target:target,dir:bidiHtmlDir(title)}" data-body="html(title)"> </a> </div> <div class="gs-fileFormat" data-if="Vars.fileFormat"> <span class="gs-fileFormat" data-body="localizedMessages[&#39;file-format&#39;] + &#39; &#39;"></span> <span class="gs-fileFormatType" data-body="Vars.fileFormat"></span> </div> <div data-if="google.search.CurrentLocale == &#39;en&#39; &amp;&amp; Vars.richSnippet"> <span data-attr="0" data-body="render(&#39;private_metadata&#39;, Vars)"> </span> </div> <div class="gs-bidi-start-align gs-snippet" data-body="html(content)" data-attr="{dir:bidiHtmlDir(content)}"> </div> <div class="gsc-url-bottom"> <div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-short" data-body="visibleUrl" data-attr="{dir:bidiTextDir(visibleUrl)}"> </div> <div class="gs-bidi-start-align gs-visibleUrl gs-visibleUrl-long" data-body="Vars.formattedUrl ? html(Vars.formattedUrl) : longUrl()" data-attr="{dir: Vars.formattedUrl ? bidiHtmlDir(Vars.formattedUrl) : bidiTextDir(longUrl()), style:&#39;word-break:break-all;&#39;}"> </div> </div> <div data-if="Vars.richSnippet &amp;&amp; Vars.richSnippet.action" class="gs-actions" data-body="render(&#39;action&#39;,richSnippet,{url:unescapedUrl,target:target})"> </div> <div class="gs-richsnippet-box" style="display: none;"> </div> <div class="gs-per-result-labels" data-attr="{url:unescapedUrl}"> <span data-body="localizedMessages[&#39;labeled&#39;]" data-if="Vars.perResultLabels"></span> <div data-foreach="Vars.perResultLabels" data-attr="0" data-if="Vars.perResultLabels"> <a class="gs-label" data-attr="{&#39;data-refinementLabel&#39;: Cur[&#39;label&#39;], &#39;label-with-op&#39;: Cur[&#39;label_with_op&#39;], &#39;dir&#39; : bidiTextDir(Cur.anchor)}" data-body="Cur.anchor"></a> <span data-body="bidiTextMarkAfter(Cur.anchor)"></span> </div> </div> </div> </div> </div> </div> <div id="base_imageResult_image"><a data-attr="{ &#39;class&#39;:imageClass }"><img data-attr="{ &#39;src&#39;:Vars.tbLargeUrl || Vars.tbMedUrl || Vars.tbUrl, &#39;title&#39;:titleNoFormatting, &#39;alt&#39;: titleNoFormatting, &#39;class&#39;:imageClass }"></a></div> <div id="base_imageResult_text"><div class="gs-title gs-ellipsis"><a class="gs-title" data-attr="{ href:originalContextUrl, target:target, dir:bidiHtmlDir(title) }" data-body="html(title)"></a></div><div class="gs-visibleUrl gs-bidi-start-align gs-ellipsis gsc-url-top" data-attr="{title:visibleUrl, dir:bidiTextDir(visibleUrl)}" data-body="visibleUrl"></div><div class="gs-snippet gs-bidi-start-align gs-ellipsis" data-attr="{title:contentNoFormatting, dir:bidiHtmlDir(content)}" data-body="html(content)"></div><div class="gs-size gs-ellipsis" data-body="width + &#39;×&#39; + height + &#39; ⋅ &#39;"></div><div class="gs-visibleUrl gs-bidi-start-align gs-ellipsis gsc-url-bottom" data-attr="{title:visibleUrl, dir:bidiTextDir(visibleUrl)}" data-body="visibleUrl"></div></div> <div id="base_imageResult_content"><div data-body="render(&#39;base_imageResult_image&#39;, Vars)" class="gs-image-box"></div><div data-body="render(&#39;base_imageResult_text&#39;, Vars)" class="gs-text-box gs-ellipsis"></div></div> <div id="base_imageResult_popup"><div class="gs-result gs-imageResult gs-imageResult-popup"><div class="gs-image-thumbnail-box"><div data-body="render(&#39;base_imageResult_image&#39;, Vars, { imageClass: &#39;gs-image gs-image-scalable&#39; })" class="gs-image-box"></div></div><div data-body="render(&#39;base_imageResult_content&#39;, Vars, { imageClass: &#39;gs-image&#39; })" class="gs-image-popup-box"></div></div><div class="gs-imagePreviewArea-invisible"><a class="gs-previewLink" data-attr="{href:Vars.originalContextUrl, target:target}"></a><div class="gs-previewSnippet"><div class="gs-previewTitle"><a class="gs-previewLink" data-attr="{href:Vars.originalContextUrl, target:target}" data-body="titleNoFormatting"></a></div><div class="gs-previewUrl" data-body="visibleUrl"></div><div class="gs-previewSize" data-body="width + &#39;×&#39; + height"></div><div class="gs-previewDescription" data-body="contentNoFormatting"></div></div></div></div> <div id="base_thumbnail"> <div data-attr="0" data-vars="{tn:(Vars.cseThumbnail &amp;&amp; cseThumbnail.src) ? cseThumbnail : ( (Vars.thumbnail &amp;&amp; thumbnail.src) ? thumbnail : {src:Vars.document &amp;&amp; document.thumbnailUrl})}"> <div class="gsc-table-cell-thumbnail gsc-thumbnail" data-if="tn.src"> <div data-if="!tn.width || !tn.height || tn.width &gt;= tn.height * 7 / 5" class="gs-image-box gs-web-image-box gs-web-image-box-landscape"> <a class="gs-image" data-attr="{href:url,target:target}"> <img class="gs-image" data-attr="{ src:tn.src, alt:localizedMessages[&#39;thumbnail-image&#39;], }"> </a> </div> <div data-elif="true" class="gs-image-box gs-web-image-box gs-web-image-box-portrait"> <a class="gs-image" data-attr="{href:url,target:target}"> <img class="gs-image" data-attr="{ src:tn.src, alt:localizedMessages[&#39;thumbnail-image&#39;], }"> </a> </div> </div> </div> </div> <div id="base_action"> <div data-foreach="Vars.action" data-attr="0"> <div data-attr="{&#39;class&#39;: &#39;gs-action &#39; + Cur[&#39;class&#39;]}" data-if="Cur.url &amp;&amp; Cur.label"> <a class="gs-action" data-attr="{href:Cur.url,target:target,dir:bidiTextDir(Cur.label)}" data-body="Cur.label"></a> </div> </div> </div> </div> </body></html>
